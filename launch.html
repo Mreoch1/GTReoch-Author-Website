@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G.T. Reoch Author Website</title>
+    <style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .launcher {
+            max-width: 600px;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .launch-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .launch-button:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.4);
+        }
+        .info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        .redirect-notice {
+            background: rgba(231, 76, 60, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="launcher">
+        <h1>G.T. Reoch</h1>
+        <p>Professional Author Website</p>
+        
+        <div class="redirect-notice">
+            <strong>Auto-redirecting in <span id="countdown">5</span> seconds...</strong>
+        </div>
+        
+        <a href="gt-reoch-author.html" class="launch-button">
+            Enter Website
+        </a>
+        
+        <div class="info">
+            <h3>What's Included:</h3>
+            <ul style="text-align: left; max-width: 400px; margin: 1rem auto;">
+                <li>Professional author biography section</li>
+                <li>Video trailer integration ready</li>
+                <li>Upcoming works showcase</li>
+                <li>Contact form with validation</li>
+                <li>Newsletter signup functionality</li>
+                <li>Fully responsive design</li>
+                <li>Modern animations and effects</li>
+            </ul>
+            
+            <p style="margin-top: 2rem;">
+                <strong>Email:</strong> Gtreoch@yahoo.com<br>
+                <strong>Ready for:</strong> Video upload, image customization, content updates
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-redirect after 5 seconds
+        let countdown = 5;
+        const countdownElement = document.getElementById('countdown');
+        
+        const timer = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+            
+            if (countdown <= 0) {
+                clearInterval(timer);
+                window.location.href = 'gt-reoch-author.html';
+            }
+        }, 1000);
+        
+        // Manual navigation
+        document.querySelector('.launch-button').addEventListener('click', () => {
+            clearInterval(timer);
+        });
+    </script>
+</body>
+</html> 
