@@ -265,25 +265,22 @@ a:hover {
     padding: var(--section-padding);
     background: var(--background-light);
     margin-top: 40px;
-    position: relative;
+    position: static !important;
     z-index: 1;
     transform: none !important;
+    will-change: auto !important;
+    overflow: visible !important;
 }
 
-.published-novels h2 {
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.published-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    margin-top: 3rem;
+.published-novels * {
+    transform: none !important;
+    will-change: auto !important;
 }
 
 .published-book {
+    transform: none !important;
+    will-change: auto !important;
+    position: static !important;
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 3rem;

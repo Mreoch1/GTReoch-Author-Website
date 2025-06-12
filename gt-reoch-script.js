@@ -77,32 +77,49 @@ function initializeScrollEffects() {
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+            // Skip any elements within published-novels section
+            if (entry.target.closest('.published-novels')) {
+                return;
+            }
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-in');
             }
         });
     }, observerOptions);
     
-    // Observe elements for animation - excluding published-novels section
+    // Observe elements for animation - explicitly excluding published-novels section
     const animatedElements = document.querySelectorAll('.work-card, .about-text, .stat');
     animatedElements.forEach(el => {
+        // Skip if element is within published-novels section
+        if (el.closest('.published-novels')) {
+            return;
+        }
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'all 0.6s ease-out';
         observer.observe(el);
     });
-    
-    // Parallax effect for hero section
-    // window.addEventListener('scroll', function() {
-    //     const scrolled = window.pageYOffset;
-    //     const heroSection = document.querySelector('.hero');
-    //     
-    //     if (heroSection) {
-    //         const speed = scrolled * 0.5;
-    //         heroSection.style.transform = `translateY(${speed}px)`;
-    //     }
-    // });
 }
+
+// Remove any scroll event listeners that might affect published-novels section
+window.addEventListener('load', function() {
+    const publishedSection = document.querySelector('.published-novels');
+    if (publishedSection) {
+        publishedSection.style.transform = 'none';
+        publishedSection.style.willChange = 'auto';
+        publishedSection.style.position = 'static';
+        
+        // Remove any existing scroll event listeners
+        const scrollEvents = ['scroll', 'wheel', 'touchmove'];
+        scrollEvents.forEach(eventType => {
+            publishedSection.addEventListener(eventType, function(e) {
+                e.stopPropagation();
+                e.preventDefault();
+                return false;
+            }, { passive: false });
+        });
+    }
+});
 
 // Video Handling
 function initializeVideoHandling() {
