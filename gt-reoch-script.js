@@ -39,17 +39,10 @@ function initializeNavigation() {
     // Header scroll effect
     let lastScrollTop = 0;
     window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
-        } else {
-            header.style.background = 'var(--background-white)';
-            header.style.backdropFilter = 'none';
-        }
-        
-        lastScrollTop = scrollTop;
+        // Always keep header black with gold text
+        header.style.background = '#000';
+        header.style.backdropFilter = 'none';
+        lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     });
 
     // Active navigation highlighting
@@ -74,8 +67,6 @@ function initializeNavigation() {
     });
 }
 
-
-
 // Scroll Effects
 function initializeScrollEffects() {
     // Intersection Observer for animations
@@ -92,7 +83,7 @@ function initializeScrollEffects() {
         });
     }, observerOptions);
     
-    // Observe elements for animation
+    // Observe elements for animation - excluding published-novels section
     const animatedElements = document.querySelectorAll('.work-card, .about-text, .stat');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
@@ -102,15 +93,15 @@ function initializeScrollEffects() {
     });
     
     // Parallax effect for hero section
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const heroSection = document.querySelector('.hero');
-        
-        if (heroSection) {
-            const speed = scrolled * 0.5;
-            heroSection.style.transform = `translateY(${speed}px)`;
-        }
-    });
+    // window.addEventListener('scroll', function() {
+    //     const scrolled = window.pageYOffset;
+    //     const heroSection = document.querySelector('.hero');
+    //     
+    //     if (heroSection) {
+    //         const speed = scrolled * 0.5;
+    //         heroSection.style.transform = `translateY(${speed}px)`;
+    //     }
+    // });
 }
 
 // Video Handling
