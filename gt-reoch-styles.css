@@ -265,11 +265,11 @@ a:hover {
     padding: var(--section-padding);
     background: var(--background-light);
     margin-top: 40px;
-    position: static !important;
+    position: relative;
     z-index: 1;
     transform: none !important;
     will-change: auto !important;
-    overflow: visible !important;
+    overflow: visible;
 }
 
 .published-novels * {
@@ -280,7 +280,7 @@ a:hover {
 .published-book {
     transform: none !important;
     will-change: auto !important;
-    position: static !important;
+    position: relative;
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 3rem;

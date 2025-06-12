@@ -109,15 +109,13 @@ window.addEventListener('load', function() {
         publishedSection.style.willChange = 'auto';
         publishedSection.style.position = 'static';
         
-        // Remove any existing scroll event listeners
-        const scrollEvents = ['scroll', 'wheel', 'touchmove'];
-        scrollEvents.forEach(eventType => {
-            publishedSection.addEventListener(eventType, function(e) {
+        // Only prevent transform effects, not scrolling
+        publishedSection.addEventListener('wheel', function(e) {
+            // Allow scrolling but prevent any transform effects
+            if (e.target.closest('.published-novels')) {
                 e.stopPropagation();
-                e.preventDefault();
-                return false;
-            }, { passive: false });
-        });
+            }
+        }, { passive: true });
     }
 });
 
