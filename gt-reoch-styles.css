@@ -771,6 +771,100 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
+/* Podcast Section Styles */
+.podcast-section {
+    background: var(--background-light);
+    padding: var(--section-padding);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.podcast-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.podcast-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.podcast-icon {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.podcast-header h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+}
+
+.podcast-subtitle {
+    color: var(--text-light);
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.podcast-player {
+    background: var(--background-white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    border: 1px solid var(--border-color);
+}
+
+.audio-container {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.audio-container audio {
+    width: 100%;
+    max-width: 500px;
+    height: 54px;
+    border-radius: var(--border-radius);
+    background: var(--background-light);
+}
+
+.audio-container audio::-webkit-media-controls-panel {
+    background-color: var(--background-light);
+}
+
+.podcast-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.episode-description {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.podcast-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.podcast-duration,
+.podcast-format {
+    background: var(--primary-color);
+    color: var(--background-white);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 /* Responsive styles for behind-the-scenes page */
 @media (max-width: 768px) {
     .interview-layout {
@@ -784,6 +878,19 @@ a:hover {
     
     .behind-scenes-hero h2 {
         font-size: 1.5rem;
+    }
+    
+    .podcast-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .podcast-player {
+        padding: 1.5rem;
+    }
+    
+    .podcast-meta {
+        justify-content: center;
+        gap: 0.5rem;
     }
 }
 
@@ -1206,6 +1313,24 @@ a:hover {
     
     .behind-scenes h2 {
         text-align: center;
+    }
+    
+    .podcast-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .podcast-player {
+        padding: 1rem;
+    }
+    
+    .audio-container audio {
+        height: 48px;
+    }
+    
+    .podcast-meta {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
     }
 }
 
