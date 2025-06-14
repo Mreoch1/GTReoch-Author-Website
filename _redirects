@@ -1,2 +1,5 @@
 # Netlify redirects file
+# Specific redirects first
+/behind-the-scenes /behind-the-scenes.html 200
+# Catch-all for SPA routing (but not for existing files)
 /*    /index.html   200 
