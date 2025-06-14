@@ -773,13 +773,9 @@ a:hover {
 
 /* Podcast Section Styles */
 .podcast-section {
-    background: #ffff00 !important; /* Temporary bright yellow for debugging */
+    background: var(--background-light);
     padding: var(--section-padding);
     border-bottom: 1px solid var(--border-color);
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    min-height: 200px;
 }
 
 .podcast-content {
