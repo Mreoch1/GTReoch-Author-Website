@@ -41,7 +41,7 @@ function initializeNavigation() {
     window.addEventListener('scroll', function() {
         // Always keep header black with gold text
         header.style.background = '#000';
-        header.style.backdropFilter = 'none';
+            header.style.backdropFilter = 'none';
         lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     });
 
@@ -100,7 +100,7 @@ function initializeScrollEffects() {
         observer.observe(el);
     });
 }
-
+    
 // Remove any scroll event listeners that might affect published-novels section
 window.addEventListener('load', function() {
     const publishedSection = document.querySelector('.published-novels');
@@ -114,9 +114,9 @@ window.addEventListener('load', function() {
             // Allow scrolling but prevent any transform effects
             if (e.target.closest('.published-novels')) {
                 e.stopPropagation();
-            }
+        }
         }, { passive: true });
-    }
+}
 });
 
 // Video Handling
