@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeVideoHandling();
     initializeStatsAnimation();
     initializeTooltips();
+    initializeCookieBanner();
 });
 
 // Navigation Functionality
@@ -441,6 +442,78 @@ const animationCSS = `
 const style = document.createElement('style');
 style.textContent = animationCSS;
 document.head.appendChild(style);
+
+// Cookie Banner Functionality
+function initializeCookieBanner() {
+    const COOKIE_CONSENT_KEY = 'gt-reoch-cookie-consent';
+    const COOKIE_EXPIRY_DAYS = 365;
+    
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptButton = document.getElementById('cookie-accept');
+    const declineButton = document.getElementById('cookie-decline');
+    
+    if (!cookieBanner) return;
+    
+    // Check if user has already made a choice
+    const existingConsent = getCookie(COOKIE_CONSENT_KEY);
+    
+    if (!existingConsent) {
+        // Show banner with a slight delay for better UX
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 1000);
+    }
+    
+    // Accept button handler
+    if (acceptButton) {
+        acceptButton.addEventListener('click', function() {
+            setCookie(COOKIE_CONSENT_KEY, 'accepted', COOKIE_EXPIRY_DAYS);
+            hideCookieBanner();
+            // Enable analytics or other tracking here if needed
+            console.log('Cookie consent: Accepted');
+        });
+    }
+    
+    // Decline button handler
+    if (declineButton) {
+        declineButton.addEventListener('click', function() {
+            setCookie(COOKIE_CONSENT_KEY, 'declined', COOKIE_EXPIRY_DAYS);
+            hideCookieBanner();
+            // Disable analytics or other tracking here if needed
+            console.log('Cookie consent: Declined');
+        });
+    }
+    
+    function hideCookieBanner() {
+        cookieBanner.classList.remove('show');
+        // Remove from DOM after animation
+        setTimeout(() => {
+            cookieBanner.style.display = 'none';
+        }, 300);
+    }
+}
+
+// Cookie utility functions
+function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict`;
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+function deleteCookie(name) {
+    document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;`;
+}
 
 // Utility Functions
 function debounce(func, wait) {
