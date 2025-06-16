@@ -180,8 +180,23 @@ a:hover {
     padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     gap: 4rem;
-    align-items: center;
+    align-items: start;
+}
+
+.hero-text {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.video-container {
+    grid-column: 2;
+    grid-row: 1;
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .hero-text h1 {
@@ -221,13 +236,6 @@ a:hover {
     box-shadow: 0 5px 15px var(--shadow-gold);
 }
 
-.video-container {
-    position: relative;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
 .video-container video {
     width: 100%;
     height: auto;
@@ -260,21 +268,164 @@ a:hover {
     outline-offset: 2px;
 }
 
+/* Hero Buy Button */
+.hero-buy-button {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.hero-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent-color);
+    color: #000 !important;
+    border: 2px solid var(--accent-color);
+    padding: 18px 36px;
+    border-radius: var(--border-radius);
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px var(--shadow-gold), 0 0 20px rgba(212, 175, 55, 0.4);
+    animation: heroGlow 3s ease-in-out infinite;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hero-cta-button:hover {
+    background: var(--text-gold);
+    border-color: var(--text-gold);
+    color: #000 !important;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px var(--shadow-gold), 0 0 40px rgba(212, 175, 55, 0.8);
+    animation: none;
+}
+
+.hero-cta-button svg {
+    transition: var(--transition);
+}
+
+.hero-cta-button:hover svg {
+    transform: scale(1.1);
+}
+
+@keyframes heroGlow {
+    0%, 100% {
+        box-shadow: 0 4px 15px var(--shadow-gold), 0 0 20px rgba(212, 175, 55, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 15px var(--shadow-gold), 0 0 30px rgba(212, 175, 55, 0.6);
+    }
+}
+
 /* Published Novels Section */
 .published-novels {
     padding: var(--section-padding);
     background: var(--background-light);
-    margin-top: 40px;
-    position: relative;
-    z-index: 1;
-    transform: none !important;
-    will-change: auto !important;
-    overflow: visible;
 }
 
-.published-novels * {
-    transform: none !important;
-    will-change: auto !important;
+.published-novels h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+/* Reviews Section */
+.reviews {
+    padding: var(--section-padding);
+    background: var(--background-white);
+}
+
+.reviews h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.review-card {
+    background: var(--background-light);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    transition: var(--transition);
+    border-left: 4px solid var(--accent-color);
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.review-stars {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.star {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    text-shadow: 0 1px 2px var(--shadow-light);
+}
+
+.review-text {
+    font-family: var(--font-accent);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0 0 1.5rem 0;
+    font-style: italic;
+    position: relative;
+}
+
+.review-text::before {
+    content: """;
+    font-size: 3rem;
+    color: var(--accent-color);
+    position: absolute;
+    top: -0.5rem;
+    left: -1rem;
+    font-family: var(--font-primary);
+    opacity: 0.3;
+}
+
+.review-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.reviewer-name {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.review-source {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
 }
 
 .published-book {
@@ -771,6 +922,109 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
+/* Author Interview Styles */
+.author-interview {
+    background: var(--background-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px var(--shadow-light);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.author-interview .interview-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--background-white);
+    padding: 2rem;
+    text-align: center;
+}
+
+.author-interview .interview-icon {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.author-interview .interview-header h3 {
+    color: var(--background-white);
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.author-interview .interview-subtitle {
+    color: var(--text-gold);
+    font-style: italic;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.interview-qa {
+    padding: 2rem;
+}
+
+.qa-item {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.qa-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.qa-item .question {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.qa-item .question:before {
+    content: "Q:";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.qa-item .answer {
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.qa-item .answer:before {
+    content: "A:";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.qa-item .answer p {
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.qa-item .answer p:last-child {
+    margin-bottom: 0;
+}
+
+.qa-item .answer em {
+    color: var(--secondary-color);
+    font-style: italic;
+    font-weight: 500;
+}
+
 /* Podcast Section Styles */
 .podcast-section {
     background: var(--background-light);
@@ -863,6 +1117,58 @@ a:hover {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+.podcast-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.play-button {
+    background: var(--accent-color);
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px var(--shadow-gold);
+}
+
+.play-button:hover {
+    background: var(--text-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-gold);
+}
+
+.play-button svg {
+    transition: var(--transition);
+}
+
+.play-button:hover svg {
+    transform: scale(1.1);
+}
+
+.play-button.playing {
+    background: var(--primary-color);
+    color: var(--accent-color);
+}
+
+.play-button.playing svg {
+    display: none;
+}
+
+.play-button.playing::before {
+    content: "⏸";
+    font-size: 1.2rem;
+    margin-right: 8px;
 }
 
 /* Responsive styles for behind-the-scenes page */
@@ -1163,8 +1469,25 @@ a:hover {
 @media (max-width: 1024px) {
     .hero-content {
         grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
         gap: 3rem;
         text-align: center;
+    }
+    
+    .hero-text {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .video-container {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .hero-buy-button {
+        grid-column: 1;
+        grid-row: 3;
+        margin-top: 2rem;
     }
     
     .published-book {
@@ -1286,6 +1609,38 @@ a:hover {
         text-align: center;
     }
     
+    /* Small Mobile Interview Styles */
+    .author-interview .interview-header {
+        padding: 1rem;
+    }
+    
+    .author-interview .interview-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .interview-qa {
+        padding: 1rem;
+    }
+    
+    .qa-item {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    
+    .qa-item .question {
+        font-size: 1.1rem;
+        padding-left: 1rem;
+    }
+    
+    .qa-item .answer {
+        padding-left: 1rem;
+    }
+    
+    .qa-item .answer p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
     .book-actions {
         justify-content: center;
         margin-top: 1.5rem;
@@ -1331,6 +1686,37 @@ a:hover {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
+    }
+    
+    /* Mobile Interview Styles */
+    .author-interview .interview-header {
+        padding: 1.5rem;
+    }
+    
+    .author-interview .interview-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .interview-qa {
+        padding: 1.5rem;
+    }
+    
+    .qa-item {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .qa-item .question {
+        font-size: 1.2rem;
+        padding-left: 1.2rem;
+    }
+    
+    .qa-item .answer {
+        padding-left: 1.2rem;
+    }
+    
+    .qa-item .answer p {
+        font-size: 0.95rem;
     }
 }
 

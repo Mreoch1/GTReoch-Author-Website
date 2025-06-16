@@ -64,7 +64,7 @@
                 
                 <div class="podcast-player">
                     <div class="audio-container">
-                        <audio controls preload="metadata">
+                        <audio id="podcast-audio" controls preload="metadata">
                             <source src="assets/Scripted in Al Qaeda Ink.wav" type="audio/wav">
                             Your browser does not support the audio element.
                         </audio>
@@ -75,9 +75,13 @@
                             Join G.T. Reoch for an intimate discussion about the creation of <em>Scripted in Al Qaeda Ink</em>. 
                             Discover the research, inspiration, and creative process that brought this political thriller to life.
                         </p>
-                        <div class="podcast-meta">
-                            <span class="podcast-duration">Full Episode</span>
-                            <span class="podcast-format">Audio Deep Dive</span>
+                        <div class="podcast-controls">
+                            <button id="play-podcast-btn" class="play-button">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+                                </svg>
+                                Play Podcast
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -103,35 +107,88 @@
                 </div>
                 
                 <div class="interview-text">
-                    <div class="coming-soon-notice">
-                        <div class="notice-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3>Interview Coming Soon</h3>
-                        <p>
-                            G.T. Reoch will be sharing an in-depth look into the creative process behind <em>Scripted in Al Qaeda Ink</em>. 
-                            This exclusive interview will cover the research, character development, and real-world inspirations that shaped this compelling political thriller.
-                        </p>
-                        
-                        <div class="topics-preview">
-                            <h4>What You'll Discover:</h4>
-                            <ul>
-                                <li><strong>Research Process:</strong> How G.T. Reoch developed the political thriller elements</li>
-                                <li><strong>Character Development:</strong> The inspiration behind key characters and their motivations</li>
-                                <li><strong>Writing Challenges:</strong> Breakthrough moments and obstacles overcome during writing</li>
-                                <li><strong>Real-World Connections:</strong> Current events that influenced the story's direction</li>
-                                <li><strong>Future Plans:</strong> What's next for the characters and potential series development</li>
-                                <li><strong>Author's Journey:</strong> From concept to published novel</li>
-                            </ul>
+                    <div class="author-interview">
+                        <div class="interview-header">
+                            <div class="interview-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3>Author Interview: Scripted in Al Qaeda Ink</h3>
+                            <p class="interview-subtitle">A debut political thriller by Jerry Reoch</p>
                         </div>
                         
-                        <div class="interview-cta">
-                            <p><strong>Stay tuned for this exclusive content!</strong></p>
-                            <p>In the meantime, experience the thriller that started it all.</p>
+                        <div class="interview-qa">
+                            <div class="qa-item">
+                                <h4 class="question">What sparked the idea for this book?</h4>
+                                <div class="answer">
+                                    <p>I've been a Survivor fan since day one—never missed a season. One night, watching the contestants struggle on a remote island, I thought: What if terrorists stormed the beach and kidnapped them? They're in a vulnerable location with minimal security. And once that idea hit, I couldn't shake it.</p>
+                                    
+                                    <p>Then I asked, What would happen next? The answer felt terrifyingly plausible. Terrorists wouldn't just be capturing contestants—they'd be invading pop culture itself, striking at the soft power of Hollywood. The stakes would skyrocket. Try to help the hostages, and they're killed. Do nothing, and the world watches in horror.</p>
+                                    
+                                    <p>That's when the story took off: a group of kidnapped celebrities—an NFL star, a model, an actor—held hostage while a rogue rescue team is formed from the show's own crew: the emcee, the pilot, and an underwater cameraman who, as luck would have it, is a former Navy SEAL. Add a budding romance and a backdrop of jungle survival, and you've got Survivor meets Zero Dark Thirty. With a love story.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-item">
+                                <h4 class="question">Which scene was hardest to write?</h4>
+                                <div class="answer">
+                                    <p>Without question, the action scenes in the final chapters. Coordinating multiple firefights across different locations—including an underground bunker—while maintaining clarity and pacing was a major challenge. I wanted the action to feel chaotic but never confusing. It took time, but I'm proud of the result.</p>
+                                    
+                                    <p>Second place? The early Marooned scenes where the contestants are still in game mode—forming alliances, navigating challenges, totally unaware of what's coming. Writing those moments with emotional authenticity, especially when the tone shifts, helped me connect more deeply with the characters.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-item">
+                                <h4 class="question">Did any characters surprise you as you wrote?</h4>
+                                <div class="answer">
+                                    <p>Absolutely—Steve Balmer, the former SEAL and cameraman, and Jenna Teals, the model. I didn't plan on them falling in love, and I definitely didn't expect that thread to become so important.</p>
+                                    
+                                    <p>There's a moment deep in the jungle where the rescue team, now joined by a rescued contestant, is rafting through a dangerous river. Tonia, the new addition, says, "I think that's sweet. Every adventure needs a love story." That line kind of cracked the novel open for me. Beneath all the action and tension, this is a story about people relying on each other to survive—to fight for good in the face of darkness.</p>
+                                    
+                                    <p>Steve and Jenna evolved far beyond my original plans. Sometimes, writing really does take on a life of its own.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-item">
+                                <h4 class="question">What changed from first draft to final?</h4>
+                                <div class="answer">
+                                    <p>Roughly 60,000 words. My first draft clocked in over 200K, and I was told—very firmly—to cut it to around 120K. That process was brutal.</p>
+                                    
+                                    <p>Writers often say their words are like their children, and I get it. You labor over a sentence, a scene—it didn't exist until you created it. Then one day, you highlight it and hit delete. Some of those cut scenes I loved. But in the end, the novel is stronger, leaner, and better paced. Still, I think about those lost words sometimes, like ghosts.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-item">
+                                <h4 class="question">Any real-life inspiration behind the setting or events?</h4>
+                                <div class="answer">
+                                    <p>Definitely. I've spent time on remote islands and know how strangely peaceful yet isolating they can feel. That blend of serenity and vulnerability runs through the book.</p>
+                                    
+                                    <p>And water—water plays a big role. I once nearly drowned during a canoeing trip. I got sucked into a waterfall and tossed around like a sock in a washing machine. I truly thought I was going to die. Just when I gave up, the river spit me out and a friend pulled me to safety. That moment stayed with me. The helplessness. The surrender. It all found its way into the novel—in the ocean scenes, in the river sequences, and in the quiet moments where characters question whether they'll make it out alive.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-item">
+                                <h4 class="question">What line or moment are you most proud of?</h4>
+                                <div class="answer">
+                                    <p>I don't want to spoil anything, but there are two scenes that stand out. One involves Cassandra Cisnero and her baby—an emotionally raw moment that required me, as a male author, to reach outside my comfort zone. From what readers have said, it resonated.</p>
+                                    
+                                    <p>The other is a pivotal scene between Dirk and Reggie on the bridge. That one took time to get right, but when it clicked, it became one of the novel's most powerful moments.</p>
+                                </div>
+                            </div>
+
+                            <div class="qa-item">
+                                <h4 class="question">What do you hope readers feel when they finish the book?</h4>
+                                <div class="answer">
+                                    <p>That their time wasn't wasted. That they didn't just read a story—they lived it. I try to write with a sense of vision, so readers don't just follow the plot, they see the world, feel the tension, smell the jungle, hear the gunshots.</p>
+                                    
+                                    <p>I didn't write this novel for money or fame. I wrote it because I love storytelling. These are characters I care about. This is a world I wanted to visit—minus the hostage crisis. If I can take readers somewhere unforgettable, then I've done my job.</p>
+                                    
+                                    <p>And maybe, just maybe, they'll learn something along the way. My brother Ron wasn't big on fiction—he preferred nonfiction with a purpose. But before he passed away from ALS, he read an early draft of this book. He told me he loved it… and that he learned a few things too. He envisioned the novel becoming a movie or an HBO mini-series.</p>
+                                    
+                                    <p><em>That meant everything to me.</em></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -171,5 +228,43 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Podcast play button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const playButton = document.getElementById('play-podcast-btn');
+            const audio = document.getElementById('podcast-audio');
+            
+            if (playButton && audio) {
+                playButton.addEventListener('click', function() {
+                    if (audio.paused) {
+                        audio.play();
+                        playButton.classList.add('playing');
+                        playButton.innerHTML = '<span style="font-size: 1.2rem; margin-right: 8px;">⏸</span>Pause Podcast';
+                    } else {
+                        audio.pause();
+                        playButton.classList.remove('playing');
+                        playButton.innerHTML = `
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+                            </svg>
+                            Play Podcast
+                        `;
+                    }
+                });
+                
+                // Update button when audio ends
+                audio.addEventListener('ended', function() {
+                    playButton.classList.remove('playing');
+                    playButton.innerHTML = `
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+                        </svg>
+                        Play Podcast
+                    `;
+                });
+            }
+        });
+    </script>
 </body>
 </html> 

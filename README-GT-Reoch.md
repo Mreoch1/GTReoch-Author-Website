@@ -2,6 +2,8 @@
 
 A clean, professional author website designed to showcase G.T. Reoch's literary works, upcoming publications, and connect with readers worldwide.
 
+**Live Site:** https://gtreoch.com
+
 ## 🌟 Features
 
 ### Core Sections
