@@ -16,7 +16,12 @@
             <div class="logo">
                 <h1 style="color: var(--accent-color); margin: 0; font-size: 1.5rem;">G.T. Reoch</h1>
             </div>
-            <ul class="nav-menu">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#published">Published Works</a></li>
                 <li><a href="index.html#behind-scenes">Behind the Scenes</a></li>
@@ -74,6 +79,9 @@
                         <p class="episode-description">
                             Join G.T. Reoch for an intimate discussion about the creation of <em>Scripted in Al Qaeda Ink</em>. 
                             Discover the research, inspiration, and creative process that brought this political thriller to life.
+                        </p>
+                        <p class="podcast-attribution">
+                            <em><small>Podcast generated using Google's NotebookLM</small></em>
                         </p>
                         <div class="podcast-controls">
                             <button id="play-podcast-btn" class="play-button">
@@ -230,8 +238,28 @@
     </footer>
 
     <script>
-        // Podcast play button functionality
+        // Mobile menu toggle functionality
         document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            if (mobileMenuToggle && navMenu) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mobileMenuToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Close menu when clicking on a link
+                const navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenuToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+            
+            // Podcast play button functionality
             const playButton = document.getElementById('play-podcast-btn');
             const audio = document.getElementById('podcast-audio');
             
