@@ -11,7 +11,31 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeStatsAnimation();
     initializeTooltips();
     initializeCookieBanner();
+    handleCrossPageNavigation();
 });
+
+// Handle cross-page navigation with anchors
+function handleCrossPageNavigation() {
+    // Check if we arrived at this page with a hash in the URL
+    if (window.location.hash) {
+        const hash = window.location.hash;
+        const targetSection = document.querySelector(hash);
+        
+        if (targetSection) {
+            // Small delay to ensure page is fully loaded
+            setTimeout(() => {
+                const header = document.querySelector('.header');
+                const headerHeight = header ? header.offsetHeight : 80;
+                const targetPosition = targetSection.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }, 100);
+        }
+    }
+}
 
 // Navigation Functionality
 function initializeNavigation() {
@@ -25,20 +49,22 @@ function initializeNavigation() {
             
             // Handle Home link specially
             if (href === '/' || href === 'index.html' || this.id === 'home-link') {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                // Remove any hash from the URL
-                history.replaceState(null, '', '/');
-                return;
+                // If we're already on the home page, just scroll to top
+                if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    history.replaceState(null, '', '/');
+                    return;
+                }
+                // Otherwise, let the browser navigate normally
             }
             
-            // Handle anchor links
+            // Handle anchor links (only if we're on the same page)
             if (href.startsWith('#')) {
-                e.preventDefault();
-                const targetId = href;
-                const targetSection = document.querySelector(targetId);
+                const targetSection = document.querySelector(href);
                 
                 if (targetSection) {
+                    e.preventDefault();
                     const headerHeight = header.offsetHeight;
                     const targetPosition = targetSection.offsetTop - headerHeight;
                     
@@ -48,6 +74,10 @@ function initializeNavigation() {
                     });
                 }
             }
+            
+            // For cross-page navigation with anchors (like index.html#published), 
+            // let the browser handle it naturally and our handleCrossPageNavigation 
+            // function will take care of scrolling when the new page loads
         });
     });
 
