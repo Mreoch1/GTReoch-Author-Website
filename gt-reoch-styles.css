@@ -1485,6 +1485,12 @@ a:hover {
     font-weight: 600;
 }
 
+.status-badge.early-release {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
 /* Footer */
 .footer {
     background: var(--background-dark);
