@@ -25,6 +25,7 @@
             padding: 3rem;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
@@ -70,6 +71,14 @@
             margin-bottom: 2rem;
             border-left: 4px solid #e74c3c;
         }
+        .info-list {
+            text-align: left;
+            max-width: 400px;
+            margin: 1rem auto;
+        }
+        .contact-info {
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -87,7 +96,7 @@
         
         <div class="info">
             <h3>What's Included:</h3>
-            <ul style="text-align: left; max-width: 400px; margin: 1rem auto;">
+            <ul class="info-list">
                 <li>Professional author biography section</li>
                 <li>Video trailer integration ready</li>
                 <li>Upcoming works showcase</li>
@@ -97,7 +106,7 @@
                 <li>Modern animations and effects</li>
             </ul>
             
-            <p style="margin-top: 2rem;">
+            <p class="contact-info">
                 <strong>Email:</strong> Gtreoch@yahoo.com<br>
                 <strong>Ready for:</strong> Video upload, image customization, content updates
             </p>

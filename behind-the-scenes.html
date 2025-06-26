@@ -302,7 +302,7 @@
                     if (audio.paused) {
                         audio.play();
                         playButton.classList.add('playing');
-                        playButton.innerHTML = '<span style="font-size: 1.2rem; margin-right: 8px;">⏸</span>Pause Podcast';
+                        playButton.innerHTML = '<span class="pause-icon">⏸</span>Pause Podcast';
                     } else {
                         audio.pause();
                         playButton.classList.remove('playing');
