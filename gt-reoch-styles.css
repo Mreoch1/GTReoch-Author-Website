@@ -135,9 +135,13 @@ a:hover {
     height: 70px;
 }
 
-.logo h1 {
+.logo h1,
+.logo-title {
     margin-bottom: 0;
     line-height: 1;
+    color: var(--accent-color);
+    margin: 0;
+    font-size: 1.5rem;
 }
 
 .logo .tagline {
