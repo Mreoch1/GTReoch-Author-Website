@@ -1,5 +1,9 @@
 # Netlify redirects file
 # Specific redirects first
 /behind-the-scenes /behind-the-scenes.html 200
+
+# Redirect launch page to main site (prevent indexing issues)
+/launch.html /index.html 301
+
 # Catch-all for SPA routing (but not for existing files)
 /*    /index.html   200 

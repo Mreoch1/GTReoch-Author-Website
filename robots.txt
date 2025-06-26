@@ -4,7 +4,10 @@ Allow: /
 # Sitemap location
 Sitemap: https://gtreoch.com/sitemap.xml
 
-# Allow all content to be indexed
+# Disallow indexing of launch page (redirect only)
+Disallow: /launch.html
+
+# Allow all main content to be indexed
 Allow: /index.html
 Allow: /behind-the-scenes.html
 Allow: /privacy-policy.html
