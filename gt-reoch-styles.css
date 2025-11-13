@@ -389,6 +389,100 @@ a:hover {
     font-size: 1.1rem;
 }
 
+/* Audio Sample Section */
+.audio-sample {
+    padding: var(--section-padding);
+    background: var(--background-light);
+}
+
+.audio-sample h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.audio-sample-card {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    background: var(--background-white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 5px 20px var(--shadow-light);
+    border: 1px solid var(--border-color);
+}
+
+.audio-sample-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.book-reference-audio {
+    display: flex;
+    align-items: center;
+}
+
+.audio-book-cover {
+    width: 120px;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+.audio-sample-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.audio-chapter-title {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-primary);
+}
+
+.audio-description {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.audio-player-container {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.audio-player-container audio {
+    width: 100%;
+    max-width: 600px;
+    height: 54px;
+    border-radius: var(--border-radius);
+    background: var(--background-light);
+    outline: none;
+}
+
+.audio-player-container audio:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.audio-player-container audio::-webkit-media-controls-panel {
+    background-color: var(--background-light);
+}
+
+.audio-sample-actions {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
 /* Reviews Section */
 .reviews {
     padding: var(--section-padding);
@@ -1872,6 +1966,20 @@ a:hover {
     .published-novels h2 {
         text-align: center;
     }
+    
+    .audio-sample-header {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .book-reference-audio {
+        justify-content: center;
+    }
+    
+    .audio-book-cover {
+        width: 100px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2225,6 +2333,25 @@ a:hover {
         padding: 12px 30px;
         font-size: 1.1rem;
         animation: glow 3s ease-in-out infinite;
+    }
+    
+    .audio-sample-card {
+        padding: 1.5rem;
+    }
+    
+    .audio-sample-header {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .audio-book-cover {
+        width: 80px;
+        margin: 0 auto;
+    }
+    
+    .audio-player-container audio {
+        height: 48px;
     }
     
     .behind-scenes-grid {

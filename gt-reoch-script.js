@@ -290,7 +290,7 @@ function initializeVideoHandling() {
                         <h3>Video Unavailable</h3>
                         <p>The book trailer could not be loaded.</p>
                         <p style="font-size: 0.9rem; color: var(--text-muted);">${errorMessage}</p>
-                        <a href="assets/scripted-in-al-qaeda-ink.mp4" 
+                        <a href="assets/Scripted-in-Al-Qaeda-Ink.mp4" 
                            style="color: var(--accent-color); text-decoration: underline;"
                            download>Download Video</a>
                     </div>

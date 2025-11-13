@@ -8,15 +8,17 @@ A clean, professional author website designed to showcase G.T. Reoch's literary 
 
 ### Core Sections
 - **Hero Section** with video trailer placement
-- **About the Author** with professional biography
-- **Upcoming Works** showcasing future publications
-- **Contact Form** for reader engagement
-- **Newsletter Signup** for reader updates
+- **Published Works** showcasing available novels with detailed synopses
+- **Audio Sample** featuring Chapter 2: Seeds of Darkness audio narration
+- **Reader Reviews** displaying beta reader feedback
+- **Behind the Scenes** with author interviews and exclusive content
+- **Upcoming Works** showcasing latest releases
+- **About the Author** with professional biography and statistics
 
 ### Professional Design
-- Clean, modern typography using Playfair Display and Source Sans Pro
+- Clean, modern typography using Cinzel, Inter, and Cormorant Garamond
 - Responsive design that works on all devices
-- Professional color palette with elegant styling
+- Professional color palette (Jungle Black Gold Green theme)
 - Smooth animations and scroll effects
 - Interactive elements and form handling
 
@@ -24,82 +26,93 @@ A clean, professional author website designed to showcase G.T. Reoch's literary 
 - Fully responsive CSS Grid and Flexbox layout
 - Modern JavaScript with ES6+ features
 - Smooth scrolling navigation
-- Form validation and submission handling
 - Video integration with error handling
+- Audio player for chapter samples
 - Animated statistics counters
-- Notification system for user feedback
+- Cookie consent banner
 - SEO-friendly semantic HTML structure
+- Security headers and optimized caching
 
 ## 📁 File Structure
 
 ```
-gt-reoch-author-page/
-├── gt-reoch-author.html      # Main HTML page
-├── gt-reoch-styles.css       # Complete CSS styling
-├── gt-reoch-script.js        # Interactive JavaScript
-├── README-GT-Reoch.md        # This documentation
+GTReoch-Author-Website/
+├── index.html                    # Main HTML page
+├── behind-the-scenes.html        # Author interview page
+├── privacy-policy.html          # Privacy policy
+├── terms-conditions.html         # Terms and conditions
+├── cookie-policy.html            # Cookie policy
+├── gt-reoch-styles.css           # Complete CSS styling
+├── gt-reoch-script.js            # Interactive JavaScript
+├── netlify.toml                  # Netlify configuration
+├── _redirects                    # URL redirects
+├── robots.txt                    # SEO robots file
+├── sitemap.xml                   # SEO sitemap
+├── README-GT-Reoch.md            # This documentation
 └── assets/
-    ├── Scripted in Al Qaeda Ink.mp4                    # Book trailer video
+    ├── Scripted-in-Al-Qaeda-Ink.mp4              # Book trailer video
+    ├── Albatross.mp4                             # Albatross book trailer
     ├── Scripted in Al Qaeda Ink Final Cover Art 4_16.jpg  # Book cover
-    ├── author-photo-placeholder.jpg (to be added)
-    ├── placeholder-book-1.jpg (to be added)
-    ├── placeholder-book-2.jpg (to be added)
-    └── placeholder-book-3.jpg (to be added)
+    ├── By G.T. Reoch.jpg                         # Albatross book cover
+    ├── Seeds of Darkness Ch2.m4a                # Chapter 2 audio sample
+    ├── image.png                                 # Author photo
+    └── google3ff6106d5253549e.html              # Google verification
 ```
 
-## 🚀 Setup Instructions
+## 🚀 Current Content
 
-### 1. Video Integration
-To add your book trailer video:
-1. Place your MP4 video file in the project directory
-2. Name it `book-trailer.mp4` or update the HTML src attribute
-3. Optionally add a poster image as `placeholder-poster.jpg`
+### Published Works
+- **Scripted in Al Qaeda Ink** - Political thriller, available on Kindle
+- **Albatross: A Paul Banter Story** - Thriller, available on Kindle
 
-### 2. Images
-Replace the placeholder images with actual content:
-- `author-photo-placeholder.jpg` - Professional author headshot (300x300px recommended)
-- `placeholder-book-1.jpg` - Book cover for "The Echoing Chambers"
-- `placeholder-book-2.jpg` - Book cover for "Digital Shadows"  
-- `placeholder-book-3.jpg` - Book cover for "The Last Garden"
-- `placeholder-poster.jpg` - Video poster frame
+### Audio Content
+- **Chapter 2: Seeds of Darkness** - Audio sample from "Scripted in Al Qaeda Ink"
+- Audio file: `assets/Seeds of Darkness Ch2.m4a`
 
-### 3. Content Customization
+### Video Content
+- Book trailers for both published novels
+- Videos are optimized for web playback
+
+### Content Customization
 
 #### Author Biography
-Edit the "About the Author" section in `gt-reoch-author.html`:
-- Update the biography text
-- Modify author statistics (published works, readers, genres)
+Edit the "About the Author" section in `index.html`:
+- Update the biography text in the About section
+- Modify author statistics (published works, upcoming works, debut year)
 - Adjust the description to match actual experience
 
-#### Upcoming Works
-Customize the upcoming books section:
-- Update book titles, genres, and descriptions
-- Modify release dates and status badges
-- Replace placeholder images with actual book covers
+#### Published Works
+Customize the published books section:
+- Update book synopses and descriptions
+- Modify Amazon links as needed
+- Replace book cover images in the assets folder
 
-#### Contact Information
-- Email is set to `Gtreoch@yahoo.com` as requested
-- Modify other contact details as needed
-- Update form handling for actual email integration
+#### Audio Samples
+To add or update audio samples:
+1. Place M4A or MP3 files in the `assets/` folder
+2. Update the audio source in the Audio Sample section
+3. Modify chapter titles and descriptions as needed
 
 ## 🎨 Customization
 
 ### Color Scheme
-The site uses CSS custom properties for easy color customization:
+The site uses a Jungle Black Gold Green color palette with CSS custom properties:
 
 ```css
 :root {
-    --primary-color: #2c3e50;      /* Navy blue */
-    --secondary-color: #34495e;     /* Darker blue */
-    --accent-color: #e74c3c;        /* Red accent */
-    --text-color: #333333;          /* Dark gray */
-    --background-light: #f8f9fa;    /* Light gray */
+    --primary-color: #1a2f1a;          /* Deep Forest Green */
+    --secondary-color: #0d1a0d;        /* Almost Black Green */
+    --accent-color: #d4af37;           /* Rich Gold */
+    --text-color: #1a1a1a;             /* Near Black */
+    --background-light: #f4f6f4;       /* Very Light Green-Tinted */
+    --background-white: #ffffff;       /* Pure White */
 }
 ```
 
 ### Typography
-- **Headers**: Playfair Display (serif)
-- **Body Text**: Source Sans Pro (sans-serif)
+- **Headers**: Cinzel (elegant serif)
+- **Body Text**: Inter (modern sans-serif)
+- **Accent Text**: Cormorant Garamond (literary serif)
 - Font sizes are responsive and use rem units
 
 ### Layout Breakpoints
@@ -108,37 +121,38 @@ The site uses CSS custom properties for easy color customization:
 - Mobile: 480px - 768px
 - Small Mobile: Below 480px
 
-## 📧 Form Integration
+## 📧 Contact
 
-### Current Setup
-Forms currently use JavaScript simulation for demonstration. To integrate with actual email services:
+### Current Contact Method
+- **Email**: Gtreoch@yahoo.com (linked in footer)
+- Direct email link available in navigation footer
 
-#### Option 1: Netlify Forms
-1. Deploy to Netlify
-2. Add `netlify` attribute to forms
-3. Forms will automatically work with Netlify's form handling
+### Future Form Integration
+If you want to add a contact form in the future, consider:
+- Netlify Forms (works automatically with Netlify deployment)
+- EmailJS for client-side email sending
+- Backend integration with server-side handling
 
-#### Option 2: EmailJS
-1. Set up EmailJS account
-2. Update JavaScript to use EmailJS SDK
-3. Configure email templates
+## 🎬 Media Specifications
 
-#### Option 3: Backend Integration
-1. Set up backend server (Node.js, PHP, etc.)
-2. Update form action attributes
-3. Implement server-side email handling
-
-## 🎬 Video Specifications
-
-### Recommended Video Settings
+### Video Settings
 - **Format**: MP4 (H.264 codec)
 - **Resolution**: 1920x1080 (Full HD)
 - **Aspect Ratio**: 16:9
 - **Duration**: 30 seconds - 3 minutes recommended
 - **File Size**: Under 50MB for web optimization
+- **Current Videos**: 
+  - `Scripted-in-Al-Qaeda-Ink.mp4`
+  - `Albatross.mp4`
 
-### Video Fallback
-The site includes error handling for video loading issues and will display a "Coming Soon" message if the video file is not available.
+### Audio Settings
+- **Format**: M4A (AAC codec) or MP3
+- **Sample Rate**: 44.1kHz recommended
+- **Bitrate**: 128kbps or higher
+- **Current Audio**: `Seeds of Darkness Ch2.m4a`
+
+### Media Fallback
+The site includes error handling for media loading issues and will display appropriate fallback messages if files cannot be loaded.
 
 ## 📱 Mobile Optimization
 
