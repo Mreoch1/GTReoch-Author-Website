@@ -17,7 +17,7 @@ export const publicFiles = [
   'assets/social-preview.png',
   'assets/favicon.png',
   'assets/By G.T. Reoch.jpg',
-  'assets/Scripted in Al Qaeda Ink Final Cover Art 4_16.jpg',
+  'assets/scripted-in-al-qaeda-ink-cover.jpg',
   'assets/scripted-in-al-qaeda-ink.mp4',
   'assets/Albatross.mp4',
   'assets/Seeds of Darkness Ch2.m4a',

@@ -83,3 +83,8 @@ preview PNG and page metadata are publicly accessible on the new domain. Keep
 
 Official references: [Vercel project configuration](https://vercel.com/docs/project-configuration/vercel-json)
 and [GitHub CodeQL workflow configuration](https://docs.github.com/en/code-security/reference/code-scanning/workflow-configuration-options).
+
+The current `scripted-in-al-qaeda-ink-cover.jpg` is the cover displayed on the
+[Amazon Kindle listing](https://www.amazon.com/dp/B0F4G1J2Q8), verified September 28, 2026.
+The original cover remains available in Git history. The site and sharing card
+use the current cover consistently.

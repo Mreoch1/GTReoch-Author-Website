@@ -6,11 +6,11 @@ const root = new URL('../', import.meta.url);
 const cover = async name => `data:image/jpeg;base64,${(await readFile(new URL(`assets/${name}`, root))).toString('base64')}`;
 const element = (type, style, children, extra = {}) => ({ type, props: { style, children, ...extra } });
 const text = (content, style) => element('div', { display: 'flex', ...style }, content);
-const book = (src, left, top, rotation) => element('img', {
-  position: 'absolute', left, top, width: 220, height: 351,
+const book = (src, left, top, rotation, height = 351) => element('img', {
+  position: 'absolute', left, top, width: 220, height,
   transform: `rotate(${rotation}deg)`, borderRadius: 3,
   boxShadow: '0 22px 48px rgba(0,0,0,0.55)',
-}, undefined, { src, width: 220, height: 351 });
+}, undefined, { src, width: 220, height });
 
 const image = new ImageResponse(element('div', {
   display: 'flex', width: '100%', height: '100%', position: 'relative',
@@ -25,7 +25,7 @@ const image = new ImageResponse(element('div', {
   text('Crafting stories', { position: 'absolute', left: 66, top: 315, fontSize: 38 }),
   text('that entertain.', { position: 'absolute', left: 66, top: 366, fontSize: 38 }),
   text('BOOKS  ·  TRAILERS  ·  AUDIO', { position: 'absolute', left: 66, bottom: 88, fontSize: 16, letterSpacing: 2, color: '#c6cebf' }),
-  book(await cover('Scripted in Al Qaeda Ink Final Cover Art 4_16.jpg'), 646, 171, -7),
+  book(await cover('scripted-in-al-qaeda-ink-cover.jpg'), 646, 171, -7, 220 * 1500 / 998),
   book(await cover('By G.T. Reoch.jpg'), 894, 100, 7),
 ]), { width: 1200, height: 630 });
 

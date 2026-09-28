@@ -52,7 +52,7 @@ GTReoch-Author-Website/
 └── assets/
     ├── Scripted-in-Al-Qaeda-Ink.mp4              # Book trailer video
     ├── Albatross.mp4                             # Albatross book trailer
-    ├── Scripted in Al Qaeda Ink Final Cover Art 4_16.jpg  # Book cover
+    ├── scripted-in-al-qaeda-ink-cover.jpg  # Book cover
     ├── By G.T. Reoch.jpg                         # Albatross book cover
     ├── Seeds of Darkness Ch2.m4a                # Chapter 2 audio sample
     ├── image.png                                 # Author photo
