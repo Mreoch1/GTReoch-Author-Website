@@ -19,7 +19,7 @@ function handleCrossPageNavigation() {
     // Check if we arrived at this page with a hash in the URL
     if (window.location.hash) {
         const hash = window.location.hash;
-        const targetSection = document.querySelector(hash);
+        const targetSection = findAnchorTarget(hash);
         
         if (targetSection) {
             // Small delay to ensure page is fully loaded
@@ -37,10 +37,38 @@ function handleCrossPageNavigation() {
     }
 }
 
+function findAnchorTarget(hash) {
+    try {
+        return document.getElementById(decodeURIComponent(hash.slice(1)));
+    } catch {
+        return null;
+    }
+}
+
 // Navigation Functionality
 function initializeNavigation() {
     const header = document.querySelector('.header');
     const navLinks = document.querySelectorAll('.nav-menu a');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (menuToggle && navMenu) {
+        const setMenuOpen = (open) => {
+            menuToggle.classList.toggle('active', open);
+            navMenu.classList.toggle('active', open);
+            menuToggle.setAttribute('aria-expanded', String(open));
+        };
+        menuToggle.addEventListener('click', () => {
+            setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
+        });
+        navLinks.forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+                setMenuOpen(false);
+                menuToggle.focus();
+            }
+        });
+    }
 
     // Smooth scrolling for navigation links
     navLinks.forEach(link => {
@@ -61,7 +89,7 @@ function initializeNavigation() {
             
             // Handle anchor links (only if we're on the same page)
             if (href.startsWith('#')) {
-                const targetSection = document.querySelector(href);
+                const targetSection = findAnchorTarget(href);
                 
                 if (targetSection) {
                     e.preventDefault();
@@ -194,21 +222,6 @@ function initializeVideoHandling() {
             console.log('Video can play through without stopping');
         });
         
-        // Play/pause functionality
-        video.addEventListener('click', function(e) {
-            // Only toggle play/pause if not clicking on controls
-            if (e.target === this) {
-                if (this.paused) {
-                    this.play().catch(err => {
-                        console.log('Play failed:', err);
-                        showNotification('Unable to play video. Please check your browser settings.', 'error');
-                    });
-                } else {
-                    this.pause();
-                }
-            }
-        });
-        
         // Volume and mute controls
         video.addEventListener('volumechange', function() {
             console.log('Volume changed:', this.volume, 'Muted:', this.muted);
@@ -290,7 +303,7 @@ function initializeVideoHandling() {
                         <h3>Video Unavailable</h3>
                         <p>The book trailer could not be loaded.</p>
                         <p style="font-size: 0.9rem; color: var(--text-muted);">${errorMessage}</p>
-                        <a href="assets/Scripted-in-Al-Qaeda-Ink.mp4" 
+                        <a href="assets/scripted-in-al-qaeda-ink.mp4"
                            style="color: var(--accent-color); text-decoration: underline;"
                            download>Download Video</a>
                     </div>
@@ -298,55 +311,8 @@ function initializeVideoHandling() {
             `;
         });
         
-        // Keyboard controls for accessibility
-        video.addEventListener('keydown', function(e) {
-            switch(e.code) {
-                case 'Space':
-                    e.preventDefault();
-                    if (this.paused) {
-                        this.play();
-                    } else {
-                        this.pause();
-                    }
-                    break;
-                case 'ArrowLeft':
-                    e.preventDefault();
-                    this.currentTime = Math.max(0, this.currentTime - 10);
-                    break;
-                case 'ArrowRight':
-                    e.preventDefault();
-                    this.currentTime = Math.min(this.duration, this.currentTime + 10);
-                    break;
-                case 'KeyM':
-                    e.preventDefault();
-                    this.muted = !this.muted;
-                    break;
-            }
-        });
-        
-        // Mobile-specific handling
-        if ('ontouchstart' in window) {
-            video.addEventListener('touchstart', function(e) {
-                // Prevent default to avoid conflicts
-                e.preventDefault();
-            });
-        }
-        
-        // Test video can be played
-        video.addEventListener('loadedmetadata', function() {
-            // Test if video can play
-            const playPromise = this.play();
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    // Auto-pause after testing
-                    this.pause();
-                    this.currentTime = 0;
-                    console.log('Video playback test successful');
-                }).catch(err => {
-                    console.log('Video playback test failed:', err);
-                });
-            }
-        });
+        // Native media controls handle pointer, touch, and keyboard playback.
+
     }
 }
 
@@ -573,7 +539,6 @@ function throttle(func, limit) {
 
 // Export functions for external use
 window.GTReochSite = {
-    showNotification,
     showTooltip,
     hideTooltip
 };
@@ -581,4 +546,4 @@ window.GTReochSite = {
 // Console message for developers
 console.log('🎭 G.T. Reoch Author Page loaded successfully!');
 console.log('📚 Professional website showcasing literary works');
-console.log('✨ Built with modern web technologies'); 
+console.log('✨ Built with modern web technologies');

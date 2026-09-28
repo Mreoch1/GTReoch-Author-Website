@@ -181,7 +181,7 @@ a:hover {
 .hamburger-line {
     width: 25px;
     height: 3px;
-    background: var(--primary-color);
+    background: var(--accent-color);
     margin: 3px 0;
     transition: var(--transition);
     border-radius: 2px;
@@ -1998,7 +1998,7 @@ a:hover {
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--background-white);
+        background: #000;
         box-shadow: 0 4px 12px var(--shadow-light);
         border-top: 1px solid var(--border-color);
         padding: 1rem 0;
@@ -2452,4 +2452,4 @@ a:hover {
     .hero-text h1 {
         color: black;
     }
-} 
+}

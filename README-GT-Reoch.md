@@ -191,21 +191,15 @@ The site includes error handling for media loading issues and will display appro
 
 ## 🚢 Deployment Options
 
-### Netlify (Recommended)
-1. Connect GitHub repository
-2. Deploy automatically
-3. Forms work out of the box
-4. Free HTTPS included
+### Vercel
 
-### GitHub Pages
-1. Push to GitHub repository
-2. Enable Pages in settings
-3. Site available at username.github.io/repo-name
+Production deploys from the GitHub `main` branch through Vercel's Git integration.
+Run `npm ci --ignore-scripts` and `npm run verify` before opening a pull request.
+The build publishes only the website's allowlisted public files to `dist/`.
 
-### Traditional Web Hosting
-1. Upload files via FTP
-2. Ensure server supports HTML/CSS/JS
-3. Configure email form handling separately
+See [Vercel deployment instructions](docs/VERCEL.md) for the release checks,
+domain setup and commit verification endpoint. Historical Netlify configuration
+is retained for reference and is not published.
 
 ## 📞 Support
 
@@ -221,4 +215,4 @@ This author website template is created specifically for G.T. Reoch. All design 
 ---
 
 **Built with modern web technologies for a professional literary presence.**
-*Clean design. Engaging content. Professional results.* 
+*Clean design. Engaging content. Professional results.*
