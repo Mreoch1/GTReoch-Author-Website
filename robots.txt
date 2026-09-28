@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://gtreoch.com/sitemap.xml
+Sitemap: https://gtreoch-author-website.vercel.app/sitemap.xml
 
 # Disallow indexing of launch page (redirect only)
 Disallow: /launch.html
@@ -16,4 +16,4 @@ Allow: /cookie-policy.html
 Allow: /assets/
 
 # Crawl-delay for respectful crawling
-Crawl-delay: 1 
+Crawl-delay: 1

@@ -3,25 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="128x128" href="assets/favicon.png">
     <title>Behind the Scenes - Scripted in Al Qaeda Ink | G.T. Reoch</title>
     <meta name="description" content="Go behind the scenes with G.T. Reoch discussing the creation of 'Scripted in Al Qaeda Ink'. Exclusive author interview and podcast deep dive into this political thriller.">
     <meta name="google-site-verification" content="sS4-BadhuqUAVaA4sJkBH3X8YOhnH2bpyjcDiUUqVS4" />
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://gtreoch.com/behind-the-scenes.html">
+    <link rel="canonical" href="https://gtreoch-author-website.vercel.app/behind-the-scenes.html">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://gtreoch.com/behind-the-scenes.html">
+    <meta property="og:url" content="https://gtreoch-author-website.vercel.app/behind-the-scenes.html">
     <meta property="og:title" content="Behind the Scenes - Scripted in Al Qaeda Ink | G.T. Reoch">
     <meta property="og:description" content="Go behind the scenes with G.T. Reoch discussing the creation of 'Scripted in Al Qaeda Ink'. Exclusive author interview and podcast deep dive.">
-    <meta property="og:image" content="https://gtreoch.com/assets/Scripted in Al Qaeda Ink Final Cover Art 4_16.jpg">
+    <meta property="og:image" content="https://gtreoch-author-website.vercel.app/assets/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="G.T. Reoch, author of Scripted in Al Qaeda Ink and Albatross: A Paul Banter Story">
+    <meta property="og:site_name" content="G.T. Reoch - Author">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gtreoch.com/behind-the-scenes.html">
-    <meta property="twitter:title" content="Behind the Scenes - Scripted in Al Qaeda Ink | G.T. Reoch">
-    <meta property="twitter:description" content="Go behind the scenes with G.T. Reoch discussing the creation of 'Scripted in Al Qaeda Ink'. Exclusive author interview and podcast deep dive.">
-    <meta property="twitter:image" content="https://gtreoch.com/assets/Scripted in Al Qaeda Ink Final Cover Art 4_16.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gtreoch-author-website.vercel.app/behind-the-scenes.html">
+    <meta name="twitter:title" content="Behind the Scenes - Scripted in Al Qaeda Ink | G.T. Reoch">
+    <meta name="twitter:description" content="Go behind the scenes with G.T. Reoch discussing the creation of 'Scripted in Al Qaeda Ink'. Exclusive author interview and podcast deep dive.">
+    <meta name="twitter:image" content="https://gtreoch-author-website.vercel.app/assets/social-preview.png">
+    <meta name="twitter:image:alt" content="G.T. Reoch, author of Scripted in Al Qaeda Ink and Albatross: A Paul Banter Story">
     <link rel="stylesheet" href="gt-reoch-styles.css?v=podcast-update-2024">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +41,7 @@
             <div class="logo">
                 <h1 class="logo-title">G.T. Reoch</h1>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+            <button class="mobile-menu-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -120,7 +127,7 @@
         <div class="container">
             <div class="interview-layout">
                 <div class="book-info">
-                    <img src="assets/Scripted in Al Qaeda Ink Final Cover Art 4_16.jpg" alt="Scripted in Al Qaeda Ink by G.T. Reoch" class="featured-book-cover">
+                    <img src="assets/scripted-in-al-qaeda-ink-cover.jpg" alt="Scripted in Al Qaeda Ink by G.T. Reoch" class="featured-book-cover">
                     <div class="book-details">
                         <h3>Scripted in Al Qaeda Ink</h3>
                         <p class="book-meta">Political Thriller • Debut Novel</p>
@@ -271,28 +278,10 @@
         </div>
     </div>
 
+    <script src="gt-reoch-script.js"></script>
     <script>
-        // Mobile menu toggle functionality
+        // Podcast playback controls
         document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const navMenu = document.getElementById('nav-menu');
-
-            if (mobileMenuToggle && navMenu) {
-                mobileMenuToggle.addEventListener('click', function() {
-                    mobileMenuToggle.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-
-                // Close menu when clicking on a link
-                const navLinks = navMenu.querySelectorAll('a');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        mobileMenuToggle.classList.remove('active');
-                        navMenu.classList.remove('active');
-                    });
-                });
-            }
-
             // Podcast play button functionality
             const playButton = document.getElementById('play-podcast-btn');
             const audio = document.getElementById('podcast-audio');

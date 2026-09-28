@@ -1,0 +1,25 @@
+// Explicit publishing list: source documents, configuration and tooling stay private.
+// Add new website pages and assets here when adding them to the site.
+export const publicFiles = [
+  'index.html',
+  'behind-the-scenes.html',
+  'privacy-policy.html',
+  'terms-conditions.html',
+  'cookie-policy.html',
+  'launch.html',
+  'gt-reoch-styles.css',
+  'gt-reoch-script.js',
+  'robots.txt',
+  'sitemap.xml',
+  'googlesS4-BadhuqUAVaA4sJkBH3X8YOhnH2bpyjcDiUUqVS4.html',
+  'assets/google3ff6106d5253549e.html',
+  'assets/image.png',
+  'assets/social-preview.png',
+  'assets/favicon.png',
+  'assets/By G.T. Reoch.jpg',
+  'assets/scripted-in-al-qaeda-ink-cover.jpg',
+  'assets/scripted-in-al-qaeda-ink.mp4',
+  'assets/Albatross.mp4',
+  'assets/Seeds of Darkness Ch2.m4a',
+  'assets/Scripted in Al Qaeda Ink.wav',
+];
