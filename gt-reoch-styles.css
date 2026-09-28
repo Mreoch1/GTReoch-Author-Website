@@ -1999,6 +1999,9 @@ a:hover {
         left: 0;
         right: 0;
         background: #000;
+        gap: 0;
+        max-height: calc(100dvh - 70px);
+        overflow-y: auto;
         box-shadow: 0 4px 12px var(--shadow-light);
         border-top: 1px solid var(--border-color);
         padding: 1rem 0;
