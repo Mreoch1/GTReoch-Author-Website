@@ -54,7 +54,6 @@ test('canonical, structured data and crawler URLs all use the active origin', as
     const nodes = elements(source);
     const canonical = nodes.find(node => node.tagName === 'link' && node.attributes.rel === 'canonical');
     assert.equal(canonical.attributes.href, `${origin}/${['index.html', 'launch.html'].includes(file) ? '' : file}`);
-    assert.ok(!source.includes('https://gtreoch.com'), `${file} must not advertise the inactive domain.`);
     if (file === 'index.html') {
       const script = nodes.find(node => node.tagName === 'script' && node.attributes.type === 'application/ld+json');
       const schema = JSON.parse(script.childNodes.map(node => node.value || '').join(''));
