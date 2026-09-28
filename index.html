@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="sS4-BadhuqUAVaA4sJkBH3X8YOhnH2bpyjcDiUUqVS4" />
     <title>G.T. Reoch | Political Thrillers &amp; Suspense</title>
     <meta name="description" content="Enter the world of G.T. Reoch. Explore Scripted in Al Qaeda Ink and Albatross: A Paul Banter Story, with book trailers, audio samples and author insights.">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gtreoch-author-website.vercel.app/">
@@ -19,7 +19,7 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="G.T. Reoch, author of Scripted in Al Qaeda Ink and Albatross: A Paul Banter Story">
     <meta property="og:site_name" content="G.T. Reoch - Author">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://gtreoch-author-website.vercel.app/">
@@ -27,13 +27,13 @@
     <meta name="twitter:description" content="Enter the world of G.T. Reoch. Explore Scripted in Al Qaeda Ink and Albatross: A Paul Banter Story, with book trailers, audio samples and author insights.">
     <meta name="twitter:image" content="https://gtreoch-author-website.vercel.app/assets/social-preview.png">
     <meta name="twitter:image:alt" content="G.T. Reoch, author of Scripted in Al Qaeda Ink and Albatross: A Paul Banter Story">
-    
+
     <!-- Additional SEO -->
     <meta name="author" content="G.T. Reoch">
     <meta name="keywords" content="G.T. Reoch, political thriller, Scripted in Al Qaeda Ink, Albatross, A Paul Banter Story, author, fiction, terrorism thriller, reality TV thriller, kindle books">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://gtreoch-author-website.vercel.app/">
-    
+
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
     {
@@ -58,100 +58,69 @@
         }
     }
     </script>
-    
-    <link rel="stylesheet" href="gt-reoch-styles.css?v=mobile-fix-2024">
+
+    <link rel="stylesheet" href="gt-reoch-styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home-styles.css">
 </head>
-<body>
-    <!-- Header Section -->
+<body class="home-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="header">
-        <nav class="nav-container">
-            <div class="logo">
-                <!-- Removed G.T. Reoch text -->
-            </div>
-            <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation" aria-controls="nav-menu" aria-expanded="false">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
+        <nav class="nav-container" aria-label="Main navigation">
+            <a class="site-brand" href="/" aria-label="G.T. Reoch home">G.T. Reoch</a>
+            <button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-controls="nav-menu" aria-expanded="false">
+                <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" id="home-link">Home</a></li>
-                <li><a href="#published">Published Works</a></li>
-                <li><a href="#audio-sample">Audio Sample</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#behind-scenes">Behind the Scenes</a></li>
-                <li><a href="#works">Upcoming Works</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="/#published">Books</a></li>
+                <li><a href="/#media">Watch &amp; Listen</a></li>
+                <li><a href="behind-the-scenes.html">Behind the Scenes</a></li>
+                <li><a href="/#about">About</a></li>
             </ul>
         </nav>
     </header>
-
-    <!-- Hero Section with Video -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-header">
-                <h1>G.T. Reoch</h1>
-                <p class="hero-subtitle">Crafting Stories that Entertain</p>
-            </div>
-            
-            <div class="hero-main">
-                <div class="video-section">
-                    <h2 class="video-title">Scripted in Al Qaeda Ink - Book Trailer</h2>
-                    <div class="video-container">
-                        <video 
-                            id="book-trailer" 
-                            controls 
-                            preload="metadata" 
-                            playsinline
-                            webkit-playsinline
-                            aria-label="Book trailer for Scripted in Al Qaeda Ink">
-                            <source src="assets/scripted-in-al-qaeda-ink.mp4?v=2" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
-                            <source src="assets/scripted-in-al-qaeda-ink.mp4?v=2" type="video/mp4">
-                            <p>Your browser doesn't support video. You can <a href="assets/scripted-in-al-qaeda-ink.mp4?v=2">download the video</a> instead.</p>
-                        </video>
+    <main id="main-content">
+        <section id="home" class="site-intro">
+            <div class="container intro-grid">
+                <div class="intro-copy">
+                    <p class="eyebrow">Political thrillers &amp; suspense</p>
+                    <h1>G.T. Reoch</h1>
+                    <p class="intro-hook">The danger is real.<br>The next move is everything.</p>
+                    <p class="intro-description">From a reality show turned fight for survival to a murder in the shadows of Detroit. Discover two stories where nothing is quite what it seems.</p>
+                    <div class="reader-actions">
+                        <a class="reader-button" href="#published">Explore the books <span aria-hidden="true">↓</span></a>
+                        <a class="reader-text-link" href="#audio-sample">Listen to a sample <span aria-hidden="true">↗</span></a>
                     </div>
-                    <div class="hero-buy-button">
-                        <a href="https://www.amazon.com/Scripted-Qaeda-Ink-Gerald-Reoch-ebook/dp/B0F4G1J2Q8" 
-                           target="_blank" 
-                           rel="noopener"
-                           class="hero-cta-button">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.293 2.293c-.63.63-.184 1.707.707 1.707H19M7 13v4a2 2 0 002 2h8a2 2 0 002-2v-4m-8 2h.01M15 15h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            Buy Now on Kindle
-                        </a>
+                </div>
+                <div class="cover-shelf" aria-label="Available books">
+                    <div class="shelf-book">
+                        <a href="#scripted" aria-label="Discover Scripted in Al Qaeda Ink"><img src="assets/scripted-in-al-qaeda-ink-cover.jpg" width="998" height="1500" alt="Scripted in Al Qaeda Ink by G.T. Reoch" fetchpriority="high"></a>
+                        <a class="shelf-buy" href="https://www.amazon.com/Scripted-Qaeda-Ink-Gerald-Reoch-ebook/dp/B0F4G1J2Q8" target="_blank" rel="noopener">Buy on Amazon <span aria-hidden="true">↗</span><span class="visually-hidden">: Scripted in Al Qaeda Ink (opens a new tab)</span></a>
+                    </div>
+                    <div class="shelf-book">
+                        <a href="#works" aria-label="Discover Albatross: A Paul Banter Story"><img src="assets/By G.T. Reoch.jpg" width="1410" height="2250" alt="Albatross: A Paul Banter Story by G.T. Reoch" fetchpriority="high"></a>
+                        <a class="shelf-buy" href="https://www.amazon.com/dp/B0FFMRS3XF" target="_blank" rel="noopener">Buy on Amazon <span aria-hidden="true">↗</span><span class="visually-hidden">: Albatross (opens a new tab)</span></a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Published Novels Section -->
-    <section id="published" class="published-novels">
-        <div class="container">
-            <h2>Published Novels</h2>
-            <p class="section-subtitle">G.T. Reoch's literary journey begins here</p>
-            
-            <div class="published-grid">
-                <div class="published-book">
-                    <div class="book-cover">
-                        <img src="assets/scripted-in-al-qaeda-ink-cover.jpg" alt="Scripted in Al Qaeda Ink by G.T. Reoch">
-                        <div class="cover-overlay">
-                            <a href="https://www.amazon.com/Scripted-Qaeda-Ink-Gerald-Reoch-ebook/dp/B0F4G1J2Q8" 
-                               target="_blank" 
-                               rel="noopener"
-                               class="buy-button">
-                                Available on Kindle
-                            </a>
-                        </div>
-                    </div>
-                    <div class="book-details">
+        <section id="published" class="books-section">
+            <div class="container">
+                <div class="section-heading"><p class="eyebrow">Choose your next read</p><h2>Two stories. No easy way out.</h2></div>
+                <div class="book-grid">
+                    <article id="scripted" class="novel-card">
+                        <p class="novel-genre">Political thriller</p>
                         <h3>Scripted in Al Qaeda Ink</h3>
-                        <p class="book-genre">Political Thriller • Debut Novel</p>
-                        <div class="book-synopsis">
-                            <p>
+                        <p>When terrorists abduct contestants from the hit reality show <em>Marooned</em>, the competition becomes a fight for survival in the Colombian jungle. With cameras still rolling, a rescue team formed from the show’s own crew faces a crisis where entertainment, extremism, and politics collide.</p>
+                        <div class="reader-actions">
+                            <a class="reader-button" href="https://www.amazon.com/Scripted-Qaeda-Ink-Gerald-Reoch-ebook/dp/B0F4G1J2Q8" target="_blank" rel="noopener">Buy on Amazon <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens a new tab)</span></a>
+                            <a class="reader-text-link" href="#audio-sample">Listen to Chapter 2</a>
+                        </div>
+                        <details class="full-synopsis"><summary>Read the full synopsis<span class="visually-hidden"> of Scripted in Al Qaeda Ink</span></summary>
+<p>
                                 When a New York Times reporter receives an unmarked envelope promising to expose a suppressed international crisis involving Al Qaeda, a U.S. president, and Hollywood's biggest reality show, he's skeptical—until the source logs into a secure channel and begins to speak.
                             </p>
                             <p>
@@ -163,345 +132,100 @@
                             <p>
                                 Gripping, cinematic, and disturbingly plausible, <em>Scripted in Al Qaeda Ink</em> pulls back the curtain on a world where entertainment, extremism, and politics collide—and the most dangerous weapon is the illusion of control.
                             </p>
+                        </details>
+                    </article>
+                    <article id="works" class="novel-card">
+                        <p class="novel-genre">Crime &amp; suspense</p>
+                        <h3>Albatross<span class="novel-subtitle">A Paul Banter Story</span></h3>
+                        <p>A late-night meeting leaves Detroit’s Paul Banter beaten, framed for murder, and drawn back into the case that destroyed his career. Caught between the police and the mob, he must uncover the truth before the past finishes what it started.</p>
+                        <div class="reader-actions">
+                            <a class="reader-button" href="https://www.amazon.com/dp/B0FFMRS3XF" target="_blank" rel="noopener">Buy on Amazon <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens a new tab)</span></a>
+                            <a class="reader-text-link" href="#albatross-film">Watch the trailer</a>
                         </div>
-                        <div class="book-actions">
-                            <a href="https://www.amazon.com/Scripted-Qaeda-Ink-Gerald-Reoch-ebook/dp/B0F4G1J2Q8" 
-                               target="_blank" 
-                               rel="noopener"
-                               class="amazon-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Buy on Kindle
-                            </a>
-                        </div>
-                    </div>
+                        <details class="full-synopsis"><summary>Read the full synopsis<span class="visually-hidden"> of Albatross</span></summary>
+<p>Some ghosts don't haunt—they hunt.</p>
+<p>Detroit's a hard city. Paul Banter's harder.</p>
+<p>When a sultry voice offers him cash for a late-night meet, Banter expects trouble. He gets a fresh corpse, a brutal setup, and a beating that leaves him bleeding in an alley. Now he's the prime suspect in a murder tied to the case that ruined his career—and nearly killed him.</p>
+<p>With the cops on one side, the mob on the other, and a dead partner's shadow chasing every step, Banter's got one shot to blow the case open before it buries him for good.</p>
+<p>Everyone's got secrets. Someone's killing to keep them.</p>
+<p>For Banter, the truth isn't just dangerous—it's personal.</p>
+                        </details>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Audio Sample Section -->
-    <section id="audio-sample" class="audio-sample">
-        <div class="container">
-            <h2>Listen to Chapter 2: Seeds of Darkness</h2>
-            <p class="section-subtitle">Experience the story through audio narration</p>
-            
-            <div class="audio-sample-card">
-                <div class="audio-sample-header">
-                    <div class="book-reference-audio">
-                        <img src="assets/scripted-in-al-qaeda-ink-cover.jpg" alt="Scripted in Al Qaeda Ink" class="audio-book-cover">
-                    </div>
-                    <div class="audio-sample-info">
-                        <h3>Scripted in Al Qaeda Ink</h3>
-                        <p class="audio-chapter-title">Chapter 2: Seeds of Darkness</p>
-                        <p class="audio-description">Listen to an exclusive audio sample from the second chapter of the novel.</p>
+        <section id="media" class="media-library">
+            <div class="container">
+                <div class="section-heading"><p class="eyebrow">A taste of the stories</p><h2>Watch &amp; listen</h2></div>
+                <div id="audio-sample" class="sample-panel">
+                    <div><p class="novel-genre">Scripted in Al Qaeda Ink · Audio sample</p><h3>Chapter 2: Seeds of Darkness</h3><p>Step into the story with a ten-minute narrated excerpt.</p></div>
+                    <div class="sample-player">
+                        <audio id="chapter-2-audio" controls preload="none" aria-label="Chapter 2: Seeds of Darkness from Scripted in Al Qaeda Ink">
+                            <source src="assets/Seeds of Darkness Ch2.m4a" type="audio/mp4">
+                        </audio>
+                        <a class="media-download" href="assets/Seeds of Darkness Ch2.m4a" download>Download the audio sample</a>
                     </div>
                 </div>
-                <div class="audio-player-container">
-                    <audio 
-                        id="chapter-2-audio" 
-                        controls 
-                        preload="metadata"
-                        aria-label="Audio sample of Chapter 2: Seeds of Darkness from Scripted in Al Qaeda Ink">
-                        <source src="assets/Seeds of Darkness Ch2.m4a" type="audio/mp4">
-                        <source src="assets/Seeds of Darkness Ch2.m4a" type="audio/x-m4a">
-                        <p>Your browser doesn't support audio playback. You can <a href="assets/Seeds of Darkness Ch2.m4a">download the audio file</a> instead.</p>
-                    </audio>
-                </div>
-                <div class="audio-sample-actions">
-                    <a href="https://www.amazon.com/Scripted-Qaeda-Ink-Gerald-Reoch-ebook/dp/B0F4G1J2Q8" 
-                       target="_blank" 
-                       rel="noopener"
-                       class="amazon-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Read the Full Novel on Kindle
-                    </a>
+                <div class="trailer-grid">
+                    <article class="trailer-panel" id="scripted-film">
+                        <video id="book-trailer" controls preload="none" playsinline poster="assets/scripted-in-al-qaeda-ink-poster.jpg" width="1280" height="720" aria-label="Book trailer for Scripted in Al Qaeda Ink">
+                            <source src="assets/scripted-in-al-qaeda-ink-trailer.mp4" type="video/mp4">
+                        </video>
+                        <div class="trailer-caption"><h3>Scripted in Al Qaeda Ink</h3><p>Book trailer · 1 min 23 sec</p><a class="media-download" href="assets/scripted-in-al-qaeda-ink-trailer.mp4" download>Download trailer</a></div>
+                    </article>
+                    <article class="trailer-panel" id="albatross-film">
+                        <video id="albatross-trailer" controls preload="none" playsinline poster="assets/albatross-poster.jpg" width="1280" height="720" aria-label="Book trailer for Albatross: A Paul Banter Story">
+                            <source src="assets/albatross-trailer.mp4" type="video/mp4">
+                        </video>
+                        <div class="trailer-caption"><h3>Albatross: A Paul Banter Story</h3><p>Book trailer · 1 min 6 sec</p><a class="media-download" href="assets/albatross-trailer.mp4" download>Download trailer</a></div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Reader Reviews Section -->
-    <section id="reviews" class="reviews">
-        <div class="container">
-            <h2>What Beta Readers Are Saying</h2>
-            <p class="section-subtitle">Early access feedback from readers who experienced the story first</p>
-            
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <blockquote class="review-text">
-                        "That is the best book I've read all year. And quite some time, TBH. VERY VERY well done. That was truly a 'Can't put it down' book."
-                    </blockquote>
-                    <div class="review-author">
-                        <span class="reviewer-name">Scott R.</span>
-                        <span class="review-source">Beta Reader</span>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <blockquote class="review-text">
-                        "Absolutely gripping from start to finish. G.T. Reoch has crafted a political thriller that feels disturbingly plausible. The way reality TV and terrorism intersect is both brilliant and terrifying. I found myself questioning everything I thought I knew about media manipulation."
-                    </blockquote>
-                    <div class="review-author">
-                        <span class="reviewer-name">Lisa K.</span>
-                        <span class="review-source">Early Access Reader</span>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <blockquote class="review-text">
-                        "This debut novel is a masterclass in tension building. The characters are complex and believable, especially Ja'far's backstory. Reoch doesn't shy away from difficult topics but handles them with intelligence and nuance. Already looking forward to the next book!"
-                    </blockquote>
-                    <div class="review-author">
-                        <span class="reviewer-name">David C.</span>
-                        <span class="review-source">Beta Reader</span>
-                    </div>
+        <section id="reviews" class="reader-notes">
+            <div class="container">
+                <div class="section-heading"><p class="eyebrow">Scripted in Al Qaeda Ink</p><h2>From the first readers</h2><p>Early feedback from beta readers.</p></div>
+                <div class="reader-quote-grid">
+                    <figure><blockquote>“That was truly a ‘Can't put it down’ book.”</blockquote><figcaption>Scott R. <span>Beta reader</span></figcaption></figure>
+                    <figure><blockquote>“Absolutely gripping from start to finish. G.T. Reoch has crafted a political thriller that feels disturbingly plausible.”</blockquote><figcaption>Lisa K. <span>Early access reader</span></figcaption></figure>
+                    <figure><blockquote>“The characters are complex and believable, especially Ja'far's backstory.”</blockquote><figcaption>David C. <span>Beta reader</span></figcaption></figure>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Behind the Scenes Section -->
-    <section id="behind-scenes" class="behind-scenes">
-        <div class="container">
-            <h2>Behind the Scenes</h2>
-            <p class="section-subtitle">Exclusive insights into the creation of G.T. Reoch's novels</p>
-            
-            <div class="behind-scenes-grid">
-                <div class="interview-card">
-                    <div class="interview-header">
-                        <div class="book-reference">
-                            <img src="assets/scripted-in-al-qaeda-ink-cover.jpg" alt="Scripted in Al Qaeda Ink" class="interview-book-cover">
-                        </div>
-                        <div class="interview-info">
-                            <h3>Author Interview: Scripted in Al Qaeda Ink</h3>
-                            <p class="interview-subtitle">An in-depth Q&A about the inspiration, research, and writing process</p>
-                            <div class="interview-meta">
-                                <span class="interview-type">Written Interview</span>
-                                <span class="interview-status">Available Now</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="interview-preview">
-                        <div class="coming-soon-content">
-                            <div class="coming-soon-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <h4>Exclusive Author Interview</h4>
-                            <p>
-                                Discover the creative process behind <em>Scripted in Al Qaeda Ink</em> - from research and character development to real-world inspirations that shaped this gripping political thriller.
-                            </p>
-                            <div class="behind-scenes-actions">
-                                <a href="behind-the-scenes.html" class="behind-scenes-button">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    Read Full Interview
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+        <section id="about" class="author-note">
+            <div class="container author-note-grid">
+                <img class="author-portrait" src="assets/image.png" alt="G.T. Reoch" loading="lazy" width="320" height="320">
+                <div>
+                    <p class="eyebrow">Meet the author</p><h2>It starts with “what if?”</h2>
+                    <p>G.T. Reoch writes because he loves storytelling. A <em>Survivor</em> fan since its first season, he began <em>Scripted in Al Qaeda Ink</em> with a question: what if terrorists seized the contestants on a remote island?</p>
+                    <p>His own experiences on remote islands helped shape the novel’s settings. As he wrote, an unexpected romance became central to the story. What matters most to him is the human connection beneath the action: people relying on one another to survive.</p>
+                    <div id="behind-scenes" class="author-interview-link"><a class="reader-text-link" href="behind-the-scenes.html">Read the author interview <span aria-hidden="true">↗</span></a><a class="reader-text-link" href="behind-the-scenes.html#podcast">Listen to the book discussion <span aria-hidden="true">↗</span></a></div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Upcoming Works Section -->
-    <section id="works" class="upcoming-works">
-        <div class="container">
-            <h2>Latest Release</h2>
-            <p class="section-subtitle">Now available for readers</p>
-            
-            <div class="works-grid">
-                <div class="work-card">
-                    <div class="work-image">
-                        <img src="assets/By G.T. Reoch.jpg" alt="Albatross: A Paul Banter Story by G.T. Reoch">
-                        <div class="work-overlay">
-                            <span class="release-date">Available Now</span>
-                        </div>
-                    </div>
-                    <div class="work-content">
-                        <h3>Albatross: A Paul Banter Story</h3>
-                        <p class="work-genre">Thriller • Early Release</p>
-                        <p class="work-description">
-                            Some ghosts don't haunt—they hunt.
-                        </p>
-                        <p class="work-description">
-                            Detroit's a hard city. Paul Banter's harder.
-                        </p>
-                        <p class="work-description">
-                            When a sultry voice offers him cash for a late-night meet, Banter expects trouble. He gets a fresh corpse, a brutal setup, and a beating that leaves him bleeding in an alley. Now he's the prime suspect in a murder tied to the case that ruined his career—and nearly killed him.
-                        </p>
-                        <p class="work-description">
-                            With the cops on one side, the mob on the other, and a dead partner's shadow chasing every step, Banter's got one shot to blow the case open before it buries him for good.
-                        </p>
-                        <p class="work-description">
-                            Everyone's got secrets. Someone's killing to keep them.
-                        </p>
-                        <p class="work-description">
-                            For Banter, the truth isn't just dangerous—it's personal.
-                        </p>
-                        <div class="video-section">
-                            <h2 class="video-title">Albatross - Book Trailer</h2>
-                            <div class="video-container">
-                                <video 
-                                    id="albatross-trailer" 
-                                    controls 
-                                    preload="metadata" 
-                                    playsinline
-                                    webkit-playsinline
-                                    aria-label="Book trailer for Albatross: A Paul Banter Story">
-                                    <source src="assets/Albatross.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
-                                    <source src="assets/Albatross.mp4" type="video/mp4">
-                                    <p>Your browser doesn't support video. You can <a href="assets/Albatross.mp4">download the video</a> instead.</p>
-                                </video>
-                            </div>
-                        </div>
-                        <div class="work-status">
-                            <span class="status-badge early-release">Available Now</span>
-                        </div>
-                        <div class="work-actions">
-                            <a href="https://www.amazon.com/dp/B0FFMRS3XF" 
-                               target="_blank" 
-                               rel="noopener"
-                               class="amazon-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Read on Kindle
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <img src="assets/image.png" alt="G.T. Reoch" class="author-photo">
-                </div>
-                <div class="about-text">
-                    <h2>About the Author</h2>
-                    <p>
-                        G.T. Reoch is an author known for compelling narratives that captivate readers across multiple genres. With a keen eye for character development and intricate storytelling, Reoch creates immersive worlds that resonate with readers long after the final page.
-                    </p>
-                    <p>
-                        Drawing inspiration from diverse experiences and extensive research, G.T. Reoch's works span political thrillers, contemporary drama, and speculative fiction. Each novel is crafted with meticulous attention to detail. The result is authentic characters and believable worlds that transport readers into extraordinary journeys.
-                    </p>
-                    <p>
-                        When not writing from his home office, G.T. Reoch enjoys exploring historical sites, reading works by fellow authors, and connecting with readers who share a passion for well-crafted stories. The author believes in the power of literature to bridge cultures, spark imagination, and illuminate the human experience.
-                    </p>
-                    <div class="author-stats">
-                        <div class="stat">
-                            <span class="stat-number">2</span>
-                            <span class="stat-label">Published Novels</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">0</span>
-                            <span class="stat-label">Upcoming Works</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">2025</span>
-                            <span class="stat-label">Debut Year</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+        </section>
+    </main>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>G.T. Reoch</h3>
-                    <p>Crafting stories that inspire and endure</p>
-                </div>
+                <div class="footer-brand"><h3>G.T. Reoch</h3><p>Political thrillers &amp; suspense</p></div>
                 <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Navigation</h4>
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="#published">Published Works</a></li>
-                            <li><a href="#audio-sample">Audio Sample</a></li>
-                            <li><a href="#reviews">Reviews</a></li>
-                            <li><a href="#behind-scenes">Behind the Scenes</a></li>
-                            <li><a href="#works">Upcoming Works</a></li>
-                            <li><a href="#about">About</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Connect</h4>
-                        <ul>
-                            <li><a href="mailto:Gtreoch@yahoo.com">Email</a></li>
-                        </ul>
-                    </div>
+                    <a href="/#published">Explore the books</a>
+                    <a href="mailto:Gtreoch@yahoo.com">Contact the author</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 G.T. Reoch. All rights reserved.</p>
+                <p>&copy; 2026 G.T. Reoch. All rights reserved.</p>
                 <div class="footer-policies">
-                    <a href="privacy-policy.html">Privacy Policy</a> | 
-                    <a href="terms-conditions.html">Terms & Conditions</a> | 
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-conditions.html">Terms &amp; Conditions</a>
                     <a href="cookie-policy.html">Cookie Policy</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner">
-        <div class="cookie-content">
-            <div class="cookie-text">
-                <h4>Cookie Notice</h4>
-                <p>We use cookies to enhance your browsing experience and analyze website traffic. By clicking "Accept All," you consent to our use of cookies. You can manage your preferences or learn more in our <a href="privacy-policy.html">Privacy Policy</a>.</p>
-            </div>
-            <div class="cookie-buttons">
-                <button id="cookie-decline" class="cookie-btn cookie-decline">Decline</button>
-                <button id="cookie-accept" class="cookie-btn cookie-accept">Accept All</button>
-            </div>
-        </div>
-    </div>
-
     <script src="gt-reoch-script.js"></script>
 </body>
 </html>

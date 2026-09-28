@@ -35,26 +35,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Section -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="header">
-        <nav class="nav-container">
-            <div class="logo">
-                <h1 class="logo-title">G.T. Reoch</h1>
-            </div>
-            <button class="mobile-menu-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
+        <nav class="nav-container" aria-label="Main navigation">
+            <a class="site-brand" href="/" aria-label="G.T. Reoch home">G.T. Reoch</a>
+            <button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-controls="nav-menu" aria-expanded="false">
+                <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#published">Published Works</a></li>
-                <li><a href="index.html#behind-scenes">Behind the Scenes</a></li>
-                <li><a href="index.html#works">Upcoming Works</a></li>
-                <li><a href="index.html#about">About</a></li>
+                <li><a href="/#published">Books</a></li>
+                <li><a href="/#media">Watch &amp; Listen</a></li>
+                <li><a href="behind-the-scenes.html">Behind the Scenes</a></li>
+                <li><a href="/#about">About</a></li>
             </ul>
         </nav>
     </header>
+    <main id="main-content">
 
     <!-- Behind the Scenes Hero -->
     <section class="behind-scenes-hero">
@@ -76,7 +72,7 @@
     </section>
 
     <!-- Deep Dive Podcast Section -->
-    <section class="podcast-section">
+    <section id="podcast" class="podcast-section">
         <div class="container">
             <div class="podcast-content">
                 <div class="podcast-header">
@@ -94,27 +90,21 @@
 
                 <div class="podcast-player">
                     <div class="audio-container">
-                        <audio id="podcast-audio" controls preload="metadata">
+                        <audio id="podcast-audio" aria-label="Book discussion: Scripted in Al Qaeda Ink" controls preload="none">
                             <source src="assets/Scripted in Al Qaeda Ink.wav" type="audio/wav">
                             Your browser does not support the audio element.
                         </audio>
+                        <a class="podcast-download" href="assets/Scripted in Al Qaeda Ink.wav" download>Download the discussion</a>
                     </div>
                     <div class="podcast-info">
                         <h3>Episode: Behind the Story</h3>
-                        <p class="episode-description">
-                            Join G.T. Reoch for an intimate discussion about the creation of <em>Scripted in Al Qaeda Ink</em>.
-                            Discover the research, inspiration, and creative process that brought this political thriller to life.
-                        </p>
+                        <p class="episode-description">An audio exploration of the inspiration, characters, and themes of <em>Scripted in Al Qaeda Ink</em>.</p>
                         <p class="podcast-attribution">
                             <em><small>Podcast generated using Google's NotebookLM</small></em>
                         </p>
+                        <p id="podcast-status" role="status"></p>
                         <div class="podcast-controls">
-                            <button id="play-podcast-btn" class="play-button">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <polygon points="5,3 19,12 5,21" fill="currentColor"/>
-                                </svg>
-                                Play Podcast
-                            </button>
+                            <button id="play-podcast-btn" class="play-button" type="button" aria-pressed="false" hidden>Play discussion</button>
                         </div>
                     </div>
                 </div>
@@ -226,96 +216,26 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
+    </main>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>G.T. Reoch</h3>
-                    <p>Crafting stories that inspire and endure</p>
-                </div>
+                <div class="footer-brand"><h3>G.T. Reoch</h3><p>Political thrillers &amp; suspense</p></div>
                 <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Navigation</h4>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="index.html#published">Published Works</a></li>
-                            <li><a href="index.html#works">Upcoming Works</a></li>
-                            <li><a href="index.html#about">About</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Connect</h4>
-                        <ul>
-                            <li><a href="mailto:Gtreoch@yahoo.com">Email</a></li>
-                        </ul>
-                    </div>
+                    <a href="/#published">Explore the books</a>
+                    <a href="mailto:Gtreoch@yahoo.com">Contact the author</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 G.T. Reoch. All rights reserved.</p>
+                <p>&copy; 2026 G.T. Reoch. All rights reserved.</p>
                 <div class="footer-policies">
-                    <a href="privacy-policy.html">Privacy Policy</a> |
-                    <a href="terms-conditions.html">Terms & Conditions</a> |
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-conditions.html">Terms &amp; Conditions</a>
                     <a href="cookie-policy.html">Cookie Policy</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner">
-        <div class="cookie-content">
-            <div class="cookie-text">
-                <h4>Cookie Notice</h4>
-                <p>We use cookies to enhance your browsing experience and analyze website traffic. By clicking "Accept All," you consent to our use of cookies. You can manage your preferences or learn more in our <a href="privacy-policy.html">Privacy Policy</a>.</p>
-            </div>
-            <div class="cookie-buttons">
-                <button id="cookie-decline" class="cookie-btn cookie-decline">Decline</button>
-                <button id="cookie-accept" class="cookie-btn cookie-accept">Accept All</button>
-            </div>
-        </div>
-    </div>
-
     <script src="gt-reoch-script.js"></script>
-    <script>
-        // Podcast playback controls
-        document.addEventListener('DOMContentLoaded', function() {
-            // Podcast play button functionality
-            const playButton = document.getElementById('play-podcast-btn');
-            const audio = document.getElementById('podcast-audio');
-
-            if (playButton && audio) {
-                playButton.addEventListener('click', function() {
-                    if (audio.paused) {
-                        audio.play();
-                        playButton.classList.add('playing');
-                        playButton.innerHTML = '<span class="pause-icon">⏸</span>Pause Podcast';
-                    } else {
-                        audio.pause();
-                        playButton.classList.remove('playing');
-                        playButton.innerHTML = `
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <polygon points="5,3 19,12 5,21" fill="currentColor"/>
-                            </svg>
-                            Play Podcast
-                        `;
-                    }
-                });
-
-                // Update button when audio ends
-                audio.addEventListener('ended', function() {
-                    playButton.classList.remove('playing');
-                    playButton.innerHTML = `
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="5,3 19,12 5,21" fill="currentColor"/>
-                        </svg>
-                        Play Podcast
-                    `;
-                });
-            }
-        });
-    </script>
 </body>
 </html>

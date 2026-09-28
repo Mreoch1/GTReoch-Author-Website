@@ -7,33 +7,74 @@
   "cleanUrls": false,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/launch.html", "destination": "/", "permanent": true }
+    {
+      "source": "/launch.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/assets/scripted-in-al-qaeda-ink.mp4",
+      "destination": "/assets/scripted-in-al-qaeda-ink-trailer.mp4",
+      "permanent": true
+    },
+    {
+      "source": "/assets/Albatross.mp4",
+      "destination": "/assets/albatross-trailer.mp4",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/behind-the-scenes", "destination": "/behind-the-scenes.html" },
-    { "source": "/health", "destination": "/health.json" },
-    { "source": "/version", "destination": "/version.json" }
+    {
+      "source": "/behind-the-scenes",
+      "destination": "/behind-the-scenes.html"
+    },
+    {
+      "source": "/health",
+      "destination": "/health.json"
+    },
+    {
+      "source": "/version",
+      "destination": "/version.json"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/assets/:path*",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
       ]
     },
     {
       "source": "/:endpoint(health|version)(.json)?",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store" }
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
       ]
     }
   ]
