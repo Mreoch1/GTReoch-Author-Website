@@ -17,7 +17,12 @@ npm run verify
 
 This checks local asset paths (including filename case), cross-page anchors,
 JavaScript syntax and formatting in deployment tooling; runs focused migration
-tests; and builds the public output. There are no third-party npm dependencies.
+tests; and builds the public output. The pinned `parse5` development dependency
+parses HTML for build-time checks. The pinned `@vercel/og` development dependency
+renders the social-preview image and favicon when `npm run social:preview` is
+run manually; commit those generated PNG files after visual review. The images
+are served as static assets, with no image-generation function or runtime
+rendering cost. No npm dependencies ship to the browser.
 Add new public files to `scripts/public-files.mjs` when adding website content.
 
 ## Git-connected release
@@ -33,6 +38,8 @@ merging, where repository permissions and the GitHub plan permit it:
 
 - `Website quality`
 - `CodeQL JavaScript`
+- `CodeQL`
+- `Vercel`
 
 Review a Vercel branch preview before merging. Merging the checked pull request
 triggers the production deployment through the Git integration. No deployment
@@ -52,10 +59,27 @@ responses disable caching. Check the home page, interview page, legal pages,
 mobile navigation, book links, audio playback, trailer playback and HTTP range
 requests for media. This public static site has no authenticated workflows.
 
-Attach `gtreoch.com` and `www.gtreoch.com` only after verifying the production
-deployment. Apply the exact DNS records requested by Vercel at the current DNS
-provider, preserve unrelated email and verification records, and verify both
-HTTPS hostnames after propagation. Keep `gtreoch.com` as the canonical hostname.
+The current public origin is `https://gtreoch-author-website.vercel.app` while
+`gtreoch.com` is unavailable. Search metadata, social previews and crawler files
+use that working origin. The shared preview image is the committed 1200 by 630
+PNG at `assets/social-preview.png`; it must remain in the publishing list.
+
+After registering and attaching `gtreoch.com` and `www.gtreoch.com`, apply the
+exact DNS records requested by Vercel at the current DNS provider, preserve
+unrelated email and verification records, and verify both HTTPS hostnames. Then
+change the public origin to `https://gtreoch.com` in these files together:
+
+- `index.html`: canonical, Open Graph, Twitter and structured-data URLs.
+- `behind-the-scenes.html`: canonical, Open Graph and Twitter URLs.
+- `privacy-policy.html`, `terms-conditions.html`, `cookie-policy.html` and
+  `launch.html`: canonical URL.
+- `sitemap.xml` and `robots.txt`: crawler URLs.
+- `tests/metadata.test.mjs`: expected public origin.
+- `README-GT-Reoch.md` and this deployment guide: published-site address.
+
+Run `npm run verify`, release through the checked pull request, and confirm the
+preview PNG and page metadata are publicly accessible on the new domain. Keep
+`gtreoch.com` as the canonical hostname once that cutover is verified.
 
 Official references: [Vercel project configuration](https://vercel.com/docs/project-configuration/vercel-json)
 and [GitHub CodeQL workflow configuration](https://docs.github.com/en/code-security/reference/code-scanning/workflow-configuration-options).

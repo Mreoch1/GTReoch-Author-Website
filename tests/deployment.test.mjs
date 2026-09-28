@@ -60,6 +60,34 @@ test('inline and standalone JavaScript syntax errors fail the site check', async
   await assert.rejects(checkSite(root, ['index.html', 'script.js']), /JavaScript syntax/);
 });
 
+test('HTML parsing validates scripts with attributed closing tags and quoted angle brackets', async t => {
+  const root = await fixture(t);
+  await writeFile(join(root, 'index.html'), '<script data-label=">">const = ;</script\t\n bar>');
+  await assert.rejects(checkSite(root, ['index.html']), /JavaScript syntax/);
+});
+
+test('HTML comments stay inert and script text is not rewritten before validation', async t => {
+  const root = await fixture(t);
+  await writeFile(join(root, 'index.html'), '<!-- <img src=missing.jpg><script>const = ;</script> --!><script>const marker = "<!--"; const = ;</script>');
+  await assert.rejects(checkSite(root, ['index.html']), error => {
+    assert.match(error.message, /JavaScript syntax/);
+    assert.doesNotMatch(error.message, /missing.jpg/);
+    return true;
+  });
+  await writeFile(join(root, 'index.html'), '<!-- <script>const = ;</script> --!><script>const marker = "<!-- -->";</script><script type="application/ld+json">{"@context":"https://schema.org"}</script>');
+  await checkSite(root, ['index.html']);
+});
+
+test('HTML parsing resolves unquoted attributes and decoded entity anchors', async t => {
+  const root = await fixture(t);
+  await writeFile(join(root, 'index.html'), '<a href=other.html#chap&#116;er>Read</a><img src=book.jpg>');
+  await writeFile(join(root, 'other.html'), '<section id=chapt&#101;r>Chapter</section><!-- <div id=missing></div> -->');
+  await writeFile(join(root, 'book.jpg'), 'Image fixture');
+  await checkSite(root, ['index.html', 'other.html', 'book.jpg']);
+  await writeFile(join(root, 'index.html'), '<a href=other.html#missing>Read</a>');
+  await assert.rejects(checkSite(root, ['index.html', 'other.html', 'book.jpg']), /missing anchor/);
+});
+
 test('Vercel preserves old page URLs, redirects launch and uses isolated output', async () => {
   const config = JSON.parse(await readFile(new URL('../vercel.json', import.meta.url), 'utf8'));
   assert.equal(config.outputDirectory, 'dist');

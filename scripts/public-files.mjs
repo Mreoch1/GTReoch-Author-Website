@@ -14,6 +14,8 @@ export const publicFiles = [
   'googlesS4-BadhuqUAVaA4sJkBH3X8YOhnH2bpyjcDiUUqVS4.html',
   'assets/google3ff6106d5253549e.html',
   'assets/image.png',
+  'assets/social-preview.png',
+  'assets/favicon.png',
   'assets/By G.T. Reoch.jpg',
   'assets/Scripted in Al Qaeda Ink Final Cover Art 4_16.jpg',
   'assets/scripted-in-al-qaeda-ink.mp4',

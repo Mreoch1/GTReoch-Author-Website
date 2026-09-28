@@ -10,6 +10,11 @@
     "check": "node scripts/check.mjs",
     "test": "node --test",
     "build": "node scripts/build.mjs",
-    "verify": "npm run check && npm test && npm run build"
+    "verify": "npm run check && npm test && npm run build",
+    "social:preview": "node scripts/social-preview.mjs"
+  },
+  "devDependencies": {
+    "@vercel/og": "1.0.1",
+    "parse5": "8.0.1"
   }
 }

@@ -497,7 +497,7 @@ a:hover {
 
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -2368,10 +2368,15 @@ a:hover {
     
     .interview-header {
         padding: 1.5rem;
-        grid-template-columns: auto 1fr;
-        text-align: left;
-        gap: 1.5rem;
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1rem;
         align-items: center;
+    }
+
+    .interview-meta {
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .book-reference {
