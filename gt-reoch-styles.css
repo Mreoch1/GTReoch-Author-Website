@@ -1672,100 +1672,6 @@ a:hover {
     color: var(--accent-color);
 }
 
-/* Cookie Banner */
-.cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--primary-color);
-    color: white;
-    padding: 1.5rem 0;
-    box-shadow: 0 -4px 12px var(--shadow-medium);
-    z-index: 10000;
-    transform: translateY(100%);
-    transition: transform 0.3s ease-in-out;
-}
-
-.cookie-banner.show {
-    transform: translateY(0);
-}
-
-.cookie-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-}
-
-.cookie-text {
-    flex: 1;
-}
-
-.cookie-text h4 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--accent-color);
-}
-
-.cookie-text p {
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.cookie-text a {
-    color: var(--accent-color);
-    text-decoration: underline;
-}
-
-.cookie-text a:hover {
-    color: #fff;
-}
-
-.cookie-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-shrink: 0;
-}
-
-.cookie-btn {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
-
-.cookie-decline {
-    background: transparent;
-    color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.cookie-decline:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-}
-
-.cookie-accept {
-    background: var(--accent-color);
-    color: var(--primary-color);
-}
-
-.cookie-accept:hover {
-    background: #e6b800;
-    transform: translateY(-1px);
-}
-
 /* Legal Pages Styling */
 .legal-content {
     padding: 100px 0 80px 0;
@@ -2461,3 +2367,47 @@ a:hover {
         color: black;
     }
 }
+
+/* Shared navigation and accessibility across the book, interview and policy pages. */
+.site-brand { font-family: var(--font-primary); color: #e2ca80; font-size: 1.25rem; letter-spacing: 0.04em; white-space: nowrap; }
+.nav-container { min-height: 72px; }
+.nav-menu { align-items: center; gap: 28px; }
+.nav-menu a { font-size: 0.83rem; }
+[id] { scroll-margin-top: 94px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; top: 8px; left: 12px; z-index: 2000; padding: 10px 16px; background: #fffefa; color: #18371f; transform: translateY(-150%); }
+.skip-link:focus { transform: translateY(0); }
+a:focus-visible, button:focus-visible, summary:focus-visible, audio:focus-visible, video:focus-visible { outline: 3px solid #b88e23; outline-offset: 5px; }
+[hidden] { display: none !important; }
+.footer { padding: 40px 0 20px; }
+.footer-content { align-items: center; gap: 25px; margin-bottom: 24px; }
+.footer-brand h3 { font-size: 1.35rem; margin-bottom: 6px; }
+.footer-brand p { font-size: 0.8rem; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+.footer-links > a { color: #d9dece; font-size: 0.85rem; }
+.footer-bottom { gap: 16px; }
+.footer-policies { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; }
+.footer-policies a { font-size: 0.75rem; }
+.legal-text { overflow-wrap: anywhere; }
+@media (max-width: 768px) {
+    .site-brand { font-size: 1.15rem; }
+    .nav-menu { gap: 0; }
+    .nav-menu a { font-size: 0.95rem; }
+    .navigation-ready .nav-menu:not(.active) { visibility: hidden; }
+    html:not(.navigation-ready) .header { position: static; }
+    html:not(.navigation-ready) .nav-container { flex-wrap: wrap; padding-top: 14px; }
+    html:not(.navigation-ready) .mobile-menu-toggle { display: none; }
+    html:not(.navigation-ready) .nav-menu { display: flex; position: static; width: 100%; box-shadow: none; padding: 10px 0; }
+    html:not(.navigation-ready) .nav-menu a { padding: 8px; }
+    .footer-links { justify-content: center; }
+    .footer-content { margin-bottom: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+.podcast-download { display: inline-block; margin-top: 12px; text-decoration: underline; text-underline-offset: 4px; }
+
+.legal-text a { color: #335a3c; text-decoration: underline; text-underline-offset: 3px; }
+.play-button, .purchase-link, .back-button { box-shadow: none; }

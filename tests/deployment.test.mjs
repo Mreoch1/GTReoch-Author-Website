@@ -99,3 +99,12 @@ test('Vercel preserves old page URLs, redirects launch and uses isolated output'
   }
   assert.ok(!config.rewrites.some(rule => ['/(.*)', '/:path*'].includes(rule.source)), 'Unknown paths must remain 404s.');
 });
+
+test('legacy trailer links redirect to published streaming replacements', async () => {
+  const config = JSON.parse(await readFile(new URL('../vercel.json', import.meta.url), 'utf8'));
+  for (const source of ['/assets/scripted-in-al-qaeda-ink.mp4', '/assets/Albatross.mp4']) {
+    const redirect = config.redirects.find(rule => rule.source === source);
+    assert.ok(redirect?.permanent, `${source} must retain a permanent redirect`);
+    assert.ok(publicFiles.includes(redirect.destination.slice(1)), 'Replacement must be published');
+  }
+});
